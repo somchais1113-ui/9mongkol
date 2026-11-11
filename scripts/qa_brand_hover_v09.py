@@ -34,7 +34,7 @@ async def main():
    for fname in ['offline-data.js','offline-bridge.js','insights.js','app.js','nine-motion.js']:
     await page.add_script_tag(content=(ROOT/'web'/fname).read_text(encoding='utf-8'))
    await page.wait_for_timeout(1000)
-   dat=await page.evaluate('''() => ({logoWidth:document.querySelector('.nine-nav-logo').naturalWidth,heroLogoWidth:document.querySelector('.nine-hero-badge').naturalWidth,shade:getComputedStyle(document.querySelector('.nine-brand-shade')).backgroundColor,documentWidth:document.documentElement.scrollWidth,viewport:innerWidth,counter:document.querySelector('#metric-numbers').textContent})''')
+   dat=await page.evaluate('''() => ({logoWidth:document.querySelector('.nine-nav-logo').naturalWidth,heroLogoWidth:document.querySelector('.nine-hero-badge').naturalWidth,shadeRemoved:document.querySelector('.nine-brand-shade')===null,documentWidth:document.documentElement.scrollWidth,viewport:innerWidth,counter:document.querySelector('#metric-numbers').textContent})''')
    card=page.locator('.service-card').first
    await card.scroll_into_view_if_needed()
    await page.wait_for_timeout(1100)
@@ -43,17 +43,17 @@ async def main():
    after=await card.bounding_box()
    dat['hover']={'deltaY':round(after['y']-before['y'],3),'deltaHeight':round(after['height']-before['height'],3),'transform':await card.evaluate('(e)=>getComputedStyle(e).transform')}
    await page.evaluate("window.scrollTo({top:0,behavior:'instant'})");await page.wait_for_timeout(250)
-   await page.screenshot(path=str(ROOT/f'PREVIEW_v09_HOME_{width}.png'),full_page=False,animations='disabled')
+   await page.screenshot(path=str(ROOT/f'PREVIEW_v09_1_HOME_{width}.png'),full_page=False,animations='disabled')
    await page.locator('#hero-analyze-number').fill('0646429449')
    await page.locator('#hero-analyze-form button').click()
    await page.wait_for_timeout(1000)
    dat['reportVisible']=await page.locator('.ni-report').first.is_visible()
-   await page.screenshot(path=str(ROOT/f'PREVIEW_v09_REPORT_{width}.png'),full_page=False,animations='disabled')
+   await page.screenshot(path=str(ROOT/f'PREVIEW_v09_1_REPORT_{width}.png'),full_page=False,animations='disabled')
    dat['errors']=errors
    outcomes.append(dat)
    await page.close()
   await browser.close()
   (ROOT/'QA_v09_BROWSER_RESULTS.json').write_text(json.dumps(outcomes,ensure_ascii=False,indent=2),encoding='utf-8')
   print(json.dumps(outcomes,ensure_ascii=False,indent=2))
-  assert all(x['documentWidth']<=x['viewport']+2 and x['logoWidth']>0 and x['heroLogoWidth']>0 and x['reportVisible'] and abs(x['hover']['deltaY'])<1 and not x['errors'] for x in outcomes)
+  assert all(x['documentWidth']<=x['viewport']+2 and x['logoWidth']>0 and x['heroLogoWidth']>0 and x['shadeRemoved'] and x['reportVisible'] and abs(x['hover']['deltaY'])<1 and not x['errors'] for x in outcomes)
 asyncio.run(main())

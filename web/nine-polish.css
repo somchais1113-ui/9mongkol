@@ -1,19 +1,11 @@
-/* 9มงคล v0.9 · Steady Luxury hover and official golden lotus logo.
+/* 9มงคล v0.9.1 · Steady Luxury hover, original circular badge and official golden lotus logo.
    Product direction: premium golden light within a stationary card, not a popping 3-D tile. */
 :root{--nine-hover-gold:#e8ba64;--nine-hover-line:rgba(244,208,133,.78)}
 .nine-theme .nine-nav-logo{display:block;width:202px;height:72px;max-width:100%;object-fit:contain;object-position:left center;image-rendering:auto;filter:drop-shadow(0 0 8px rgba(231,176,73,.24));transform:none!important}
 .nine-theme .brand{min-width:205px;margin-right:12px}
 .nine-theme .nine-nav-copy{display:none!important}
-.nine-theme .celestial-medallion{width:min(300px,95%);height:116px;flex-basis:auto;display:flex;align-items:center;justify-content:flex-start;position:relative;margin:6px 0 18px;border:0;border-radius:0;background:transparent!important;box-shadow:none!important;animation:none!important;transform:none!important}
-.nine-theme .celestial-medallion::before,.nine-theme .celestial-medallion::after{display:none!important}
-.nine-theme .celestial-medallion .nine-hero-badge{width:100%;height:100%;object-fit:contain;object-position:left center;filter:drop-shadow(0 2px 12px rgba(238,182,79,.35))!important}
 .nine-theme .hero-main h2{margin-top:6px}
 .nine-theme .site-footer .nine-footer-logo{width:150px;height:57px;object-fit:contain;display:block;filter:drop-shadow(0 0 5px rgba(244,210,133,.15))}
-/* Image's lower line is embedded in the supplied hero art. A solid footer ribbon masks this line,
-   without modifying user-provided artwork and without changing faces or the original emblem. */
-.nine-theme .nine-brand-shade{height:46px;inset:auto 0 0;padding:10px clamp(12px,2.2vw,24px);align-items:center;display:flex;justify-content:space-between;gap:14px;border-top:1px solid rgba(234,185,94,.47);background:#38050a;box-shadow:0 -9px 18px rgba(44,1,7,.10);text-shadow:none}
-.nine-theme .nine-brand-shade span{font-size:14px;line-height:1.4;letter-spacing:.07em;color:#ffe2a7;font-weight:850}
-.nine-theme .nine-brand-shade strong{font-size:14px;line-height:1.4;color:#ffe6b9;font-weight:730}
 /* Reduce the aggressive pop-up effect on cards/stats/service panels and number selectors. */
 .nine-theme .stat-card,.nine-theme .service-card,.nine-theme .number-card,.nine-theme .nine-deity-card,.nine-theme .panel,.nine-theme .workflow-item,.nine-theme .ni-report-card,.nine-theme .ni-advice-grid article,.nine-theme .rule-card,.nine-theme .celestial-categories button{transition:background-color .25s ease,border-color .25s ease,box-shadow .28s ease,color .2s ease!important;transform:none!important;scale:1!important}
 .nine-theme .stat-card:hover,.nine-theme .service-card:hover,.nine-theme .number-card:hover,.nine-theme .nine-deity-card:hover,.nine-theme .panel:hover,.nine-theme .workflow-item:hover,.nine-theme .ni-report-card:hover,.nine-theme .ni-advice-grid article:hover,.nine-theme .rule-card:hover{transform:none!important;translate:none!important;scale:1!important;filter:none!important;border-color:var(--nine-hover-line)!important;box-shadow:0 10px 27px rgba(38,2,7,.28),inset 0 0 0 1px rgba(255,217,145,.20)!important}
@@ -27,9 +19,9 @@
 .nine-theme :is(.service-card,.stat-card,.number-card,.nine-deity-card,.panel,.nav-item,.button,.ni-action):focus-visible{outline:2px solid #f0cf88;outline-offset:3px}
 /* Responsive: prioritize legibility and header spacing over graphic size. */
 @media(max-width:1280px) and (min-width:1061px){.nine-theme .nine-nav-logo{width:173px;height:65px}.nine-theme .brand{min-width:177px;margin-right:5px}}
-@media(max-width:1060px){.nine-theme .nine-nav-logo{width:226px;height:auto;max-height:90px;object-position:center}.nine-theme .brand{min-width:0;margin:0 0 18px;justify-content:center}.nine-theme .nine-brand-shade{height:44px}}
-@media(max-width:760px){.nine-theme .nine-brand-shade{height:45px;padding:7px 11px;justify-content:center}.nine-theme .nine-brand-shade span{display:inline-block;font-size:12px;text-align:center}.nine-theme .nine-brand-shade strong{display:none}.nine-theme .celestial-medallion{width:min(250px,100%);height:99px;margin:4px 0 15px}.nine-theme .site-footer .nine-footer-logo{width:130px;height:48px}}
+@media(max-width:1060px){.nine-theme .nine-nav-logo{width:226px;height:auto;max-height:90px;object-position:center}.nine-theme .brand{min-width:0;margin:0 0 18px;justify-content:center}}
+@media(max-width:760px){.nine-theme .site-footer .nine-footer-logo{width:130px;height:48px}}
 @media(prefers-reduced-motion:reduce){.nine-theme .stat-card,.nine-theme .service-card,.nine-theme .number-card,.nine-theme .nine-deity-card{transition:none!important}}
 /* Refined banner crop: preserve the complete emblem while covering the original embedded tagline. */
 @media(min-width:761px){.nine-theme .nine-brand-banner{height:clamp(320px,28vw,360px)}}
-@media(max-width:760px){.nine-theme .nine-brand-banner{height:240px}.nine-theme .nine-brand-shade{height:31px;padding:4px 10px}.nine-theme .nine-brand-shade span{font-size:11px}}
+@media(max-width:760px){.nine-theme .nine-brand-banner{height:240px}}

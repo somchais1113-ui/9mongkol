@@ -1,11 +1,11 @@
 [
   {
     "logoWidth": 1024,
-    "heroLogoWidth": 1024,
-    "shade": "rgb(56, 5, 10)",
+    "heroLogoWidth": 512,
+    "shadeRemoved": true,
     "documentWidth": 1440,
     "viewport": 1440,
-    "counter": "395",
+    "counter": "389",
     "hover": {
       "deltaY": 0.0,
       "deltaHeight": 0.0,
@@ -16,11 +16,11 @@
   },
   {
     "logoWidth": 1024,
-    "heroLogoWidth": 1024,
-    "shade": "rgb(56, 5, 10)",
+    "heroLogoWidth": 512,
+    "shadeRemoved": true,
     "documentWidth": 390,
     "viewport": 390,
-    "counter": "395",
+    "counter": "393",
     "hover": {
       "deltaY": 0.0,
       "deltaHeight": 0.0,

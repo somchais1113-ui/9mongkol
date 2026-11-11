@@ -10,7 +10,8 @@ def test_new_lotus_logo_exists_and_is_used():
     for page in (ROOT/'index.html',ROOT/'web/index.html'):
         soup=BeautifulSoup(page.read_text(encoding='utf-8'),'html.parser')
         assert 'lotus.webp' in soup.select_one('.nine-nav-logo')['src']
-        assert 'lotus.webp' in soup.select_one('.nine-hero-badge')['src']
+        assert 'badge-9.svg' in soup.select_one('.nine-hero-badge')['src']
+        assert soup.select_one('.nine-brand-shade') is None
         assert 'lotus.webp' in soup.select_one('.nine-footer-logo')['src']
         assert 'favicon-9mongkol-lotus.png' in soup.select_one('link[rel=icon]')['href']
         assert soup.select_one('.nine-nav-copy') is None
@@ -18,12 +19,12 @@ def test_new_lotus_logo_exists_and_is_used():
 def test_polish_loaded_in_both_modes():
     for p in (ROOT/'web/index.html',ROOT/'index.html'):
         src=p.read_text(encoding='utf-8')
-        assert 'nine-polish.css?v=0.9.0' in src
-        if p==ROOT/'index.html':assert 'web/nine-polish.css?v=0.9.0' in src
-        else:assert '/assets/nine-polish.css?v=0.9.0' in src
+        assert 'nine-polish.css?v=0.9.1' in src
+        if p==ROOT/'index.html':assert 'web/nine-polish.css?v=0.9.1' in src
+        else:assert '/assets/nine-polish.css?v=0.9.1' in src
     css=(ROOT/'web/nine-polish.css').read_text(encoding='utf-8')
     assert 'transform:none!important' in css
-    assert 'nine-brand-shade' in css
+    assert 'width:min(300px,95%)' not in css
     assert 'scale:1!important' in css
     js=(ROOT/'web/app.js').read_text(encoding='utf-8')
     assert 'setupHeroParallax();window.NIInsights?.bindImageEditor()' not in js
