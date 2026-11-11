@@ -1,3 +1,21 @@
+# Full Package v1.3 — การ์ดเบอร์ 9มงคล
+
+**สิ่งที่ส่งมอบ:** `index.html` เปิดแบบ Offline, `web/` HTML/CSS/JS และ SVG ที่แก้ไข, Backend FastAPI, ฐานข้อมูลตัวอย่าง, `START_MAC.command`, ชุดทดสอบและ Preview ภายใต้ `previews/v13/`
+
+**รุ่นที่ใช้:** v1.3 ขยายเบอร์และราคา ลบ glow หลังคะแนน และเพิ่มความยาวรวงข้าว โดยยังคงระบบเดิมทุกส่วน  รายละเอียดใน `CHANGELOG_v1_3_TH.md`
+
+# v1.2 Card Design Lock — FULL PACKAGE
+- เพิ่ม `web/number-card/number-card-design-lock.css`
+- เปลี่ยนมุมมองแรกเป็นการ์ดใหญ่ตาม Master (สลับสองคอลัมน์ได้)
+- มีภาพ QA ใหม่ `previews/v12/` และเอกสาร `DESIGN_LOCK_v1_2_TH.md`
+- API/Offline รองรับข้อมูล Dynamic เดิมทั้งหมด
+
+# 9มงคล Full Package v1.1 — Readable Number Cards
+
+## 9มงคล v1.0 — Number Card Edition
+
+ปรับผลค้นหาเบอร์ด้วย HTML Objects Kit ที่ผู้ใช้ส่งมา รองรับการ์ด 2 คอลัมน์และการ์ดใหญ่ พร้อมทั้ง Online/Offline โดยคงระบบวิเคราะห์เดิมทุกอย่าง ดู `CHANGELOG_v1_0_TH.md` และ `NUMBER_CARD_GUIDE_TH.md`
+
 # FULL PACKAGE — 9 มงคล v0.8 (Readability Edition)
 
 ## ไฟล์ในชุดส่งมอบ

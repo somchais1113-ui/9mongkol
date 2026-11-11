@@ -1,0 +1,212 @@
+/* 9MONGKOL / Number Card V1 — pure HTML+CSS; all data live in the DOM.
+   No embedded background image. Use this file with number-card.js.
+   Customize colors via CSS variables or override scoped .nmk-card selectors. */
+:root {
+  --nmk-bg: #fff4db;
+  --nmk-ivory: #fffaf0;
+  --nmk-red: #9b0007;
+  --nmk-red-dark: #570004;
+  --nmk-red-bright: #e30a0f;
+  --nmk-gold: #edac33;
+  --nmk-gold-light: #fff3ad;
+  --nmk-copper: #a34d05;
+  --nmk-muted: #656262;
+  --nmk-font: 'Noto Sans Thai', 'Noto Looped Thai', Tahoma, Arial, sans-serif;
+}
+.nmk-card, .nmk-card * { box-sizing: border-box; }
+.nmk-card {
+  isolation: isolate;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: clamp(20px, 3vw, 42px);
+  border: 2px solid #ffd06b;
+  padding: clamp(19px, 4.35vw, 62px);
+  color: var(--nmk-red-dark);
+  background:
+    radial-gradient(ellipse 38% 22% at 66% 61%, rgba(255,191,41,.18), transparent 90%),
+    radial-gradient(ellipse 65% 44% at 48% 23%, #fffdf8 4%, rgba(255,253,247,.76) 61%, transparent 100%),
+    linear-gradient(128deg, #fff9e9 0%, #fff4de 56%, #fff1d4 100%);
+  box-shadow: 0 0 0 6px #8e0806, 0 13px 32px rgba(71,15,4,.18), inset 0 0 0 3px rgba(255,255,255,.87);
+  font-family: var(--nmk-font);
+}
+.nmk-card::after {
+  content:''; position:absolute; inset:8px;
+  border:1px solid rgba(248,217,131,.27);
+  border-radius:inherit; pointer-events:none; z-index:0;
+}
+.nmk-card__inner { position: relative; z-index: 1; }
+.nmk-card__top {
+  display:flex; justify-content:space-between; align-items:center; gap:16px;
+  border-bottom:1.5px solid #d88b1d;
+  padding-bottom:clamp(16px, 2.25vw, 32px);
+}
+.nmk-card__id {
+  font-size: clamp(17px, 3vw, 39px);
+  line-height:1.1; letter-spacing:.085em; font-weight:900;
+  color:#b45b0c; white-space:nowrap;
+}
+.nmk-card__status {
+  flex-shrink:0; white-space:nowrap;
+  font-size: clamp(13px, 2vw, 28px);
+  line-height:1.3; font-weight:700;
+  padding: clamp(9px,1.05vw,15px) clamp(12px,1.8vw,25px);
+  border:1.5px solid #eba138; border-radius: clamp(8px, 1vw, 14px);
+  color:#6b0904; background:linear-gradient(#fff0ce,#ffdfa9);
+  box-shadow:0 4px 0 rgba(150,65,0,.12),0 9px 15px rgba(127,65,0,.16),inset 0 1px 0 #fff8e7;
+}
+.nmk-card__status--verified { background:linear-gradient(#e4f8e7,#c4edcb); border-color:#74a67b;color:#20582b; }
+.nmk-card__phone-wrap { text-align:center; padding:clamp(27px,4vw,58px) 0 clamp(19px,2.2vw,34px); }
+.nmk-card__phone {
+  display:inline-block; margin:0; color:var(--nmk-red);
+  font-family:var(--nmk-font); font-weight:900;
+  font-variant-numeric:tabular-nums lining-nums;
+  white-space:nowrap; letter-spacing: -.055em;
+  font-size:clamp(39px, 9.4vw, 145px); line-height:1.22; transform:scaleX(1.32); transform-origin:center;
+  background:linear-gradient(180deg,#f62b26 4%,#a90205 26%,#8d0002 56%,#6f0003 80%,#bb0906 100%);
+  -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 2px 0 #ffe48c) drop-shadow(0 6px 5px rgba(238,153,5,.42));
+}
+.nmk-card__phone-gleam {
+  display:block; width:65%; height:4px; margin:-3px auto 0;
+  background:linear-gradient(90deg,transparent,#ffd966 27%,#fff5b7 50%,#ffd05c 74%,transparent);
+  filter:blur(2px); opacity:.9; border-radius:50%;
+}
+.nmk-card__fit {
+  display:flex; align-items:center; gap:clamp(10px,2vw,29px);
+  padding:clamp(9px,1.1vw,17px) 0 clamp(24px,3.15vw,46px);
+  font-size:clamp(17px,2.7vw,35px); line-height:1.4;
+  color:#616063; flex-wrap:wrap;
+}
+.nmk-card__fit::before {
+  content:''; width:clamp(5px,.65vw,9px); height:clamp(25px,4vw,55px); border-radius:7px;
+  background:linear-gradient(#ec9c06,#db7400); flex:0 0 auto;
+}
+.nmk-card__fit-label { font-weight:500; }
+.nmk-card__occupation { font-weight:800; color:#97500b; }
+.nmk-card__scorebar {
+  position:relative; display:grid; grid-template-columns:auto minmax(0,1fr) auto;
+  align-items:center; gap:clamp(10px,1.5vw,24px);
+  min-height:clamp(118px,14vw,190px);
+  padding:clamp(14px,2.3vw,32px) clamp(16px,3.6vw,47px);
+  border-radius:clamp(17px,3vw,46px);
+  border:2px solid #ffc743;
+  background:
+    radial-gradient(ellipse 35% 90% at 74% 11%,rgba(255,136,0,.5),transparent 75%),
+    linear-gradient(167deg,#e11112 -15%,#a00004 29%,#7a0002 66%,#9e0603 100%);
+  box-shadow:inset 0 2px 2px rgba(255,237,188,.9),inset 0 -7px 13px rgba(76,0,0,.5),0 5px 0 #e99b20,0 16px 22px rgba(135,33,2,.22);
+  color:#fff;
+}
+.nmk-card__scorebar::before {
+  content:'';position:absolute;top:-2px;left:5%;right:4%;height:5px;z-index:0;
+  background:linear-gradient(90deg,transparent,#fff5ae 34%,#ffeb84 55%,transparent);
+  filter:blur(3px); pointer-events:none;
+}
+.nmk-card__target {
+  width:clamp(56px,9.8vw,137px); height:clamp(56px,9.8vw,137px);
+  display:flex; align-items:center; justify-content:center;
+  border-right:1.5px solid rgba(253,179,62,.85);
+  padding-right:clamp(9px,1.6vw,23px); flex-shrink:0;
+}
+.nmk-card__target img{display:block;width:100%;height:100%;object-fit:contain;}
+.nmk-card__score-caption { min-width:0; }
+.nmk-card__score-heading { font-size:clamp(19px,3.05vw,45px);font-weight:800;line-height:1.2;white-space:nowrap; }
+.nmk-card__score-sub { font-size:clamp(15px,2.35vw,32px);font-weight:650;line-height:1.65; }
+.nmk-card__score {
+  display:flex;align-items:center;justify-content:flex-end;position:relative;
+  min-width:0;white-space:nowrap; line-height:1;
+}
+.nmk-card__score-number {
+  font-family:var(--nmk-font);font-variant-numeric:tabular-nums lining-nums;
+  font-size:clamp(66px,11.3vw,163px);font-weight:900;letter-spacing:-.09em;line-height:1.05;
+  padding-right:.06em;
+  color:#ffd55d;
+  background:linear-gradient(#fff8b5 0%,#ffe15c 20%,#ffac16 53%,#cc6500 79%,#fff3a1 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 3px 0 #8a3e08) drop-shadow(0 5px 2px #fbbb37) drop-shadow(0 11px 8px rgba(0,0,0,.32));
+}
+.nmk-card__score-denom {
+  position:relative;margin-left:clamp(4px,.7vw,10px);
+  padding:clamp(8px,1.25vw,18px) clamp(11px,1.7vw,25px);
+  border-radius:999px;border:1px solid #f8b13b;
+  background:linear-gradient(100deg,rgba(139,17,4,.88),rgba(214,99,15,.93));
+  font-size:clamp(23px,4.5vw,64px);font-weight:850;font-style:italic;
+  text-shadow:0 2px 3px rgba(69,0,0,.3);
+}
+.nmk-card__laurel { width:clamp(30px,5vw,70px); height:clamp(70px,9vw,128px); object-fit:contain; flex-shrink:0; }
+.nmk-card__score-medallion {display:flex;align-items:center;}
+.nmk-card__bottom {
+  display:flex; align-items:center; justify-content:space-between;
+  gap:clamp(18px,2.2vw,31px);
+  padding:clamp(28px,4vw,56px) 0 4px;
+}
+.nmk-card__price-group {display:flex;gap:clamp(14px,2.4vw,34px);align-items:center;min-width:0;}
+.nmk-card__price {
+  font-size:clamp(33px,5.5vw,74px);line-height:1.2;white-space:nowrap;font-weight:900;
+  color:#a10007;letter-spacing:-.04em;font-variant-numeric:tabular-nums;
+}
+.nmk-card__meta {
+  border-left:2px solid #da9029;padding-left:clamp(15px,2.4vw,34px);
+  color:#676365;font-size:clamp(14px,2.2vw,30px);line-height:1.48;
+}
+.nmk-card__meta-line {display:block;white-space:nowrap;}
+.nmk-card__cta {
+  display:flex;align-items:center;justify-content:center;gap:clamp(6px,.9vw,14px);
+  flex-shrink:0;text-decoration:none;white-space:nowrap;
+  border:2px solid #ffbb37;border-radius:999px;
+  padding:clamp(12px,2.1vw,29px) clamp(18px,3vw,44px);
+  color:#fff;font-weight:850;font-size:clamp(18px,3.25vw,47px);line-height:1.15;
+  background:linear-gradient(164deg,#f80f13 0%,#bd0308 45%,#7e0005 100%);
+  box-shadow:inset 0 2px 2px #ffa787,inset 0 -4px 4px #690003,0 4px 0 #d58c22,0 12px 16px rgba(157,62,8,.26);
+  transition:box-shadow .15s ease,filter .15s ease;
+}
+.nmk-card__cta:hover {filter:brightness(1.08);}
+.nmk-card__cta:focus-visible {outline:3px solid #1c55c7;outline-offset:4px;}
+.nmk-card__cta img{width:clamp(19px,3.4vw,47px);height:clamp(19px,3.4vw,47px);}
+@media (max-width:950px){
+  .nmk-card__phone{transform:scaleX(1.05);}
+  .nmk-card__scorebar{grid-template-columns:auto minmax(0,1fr);}
+  .nmk-card__score-medallion{grid-column:1/-1;justify-content:center; padding-top:4px;}
+  .nmk-card__score-heading{white-space:normal;}
+  .nmk-card__score-number{font-size:clamp(72px,16vw,140px);}
+  .nmk-card__score-denom{font-size:clamp(26px,7vw,50px);}
+  .nmk-card__bottom{align-items:stretch;}
+  .nmk-card__price-group{gap:10px;}
+  .nmk-card__meta{font-size:clamp(12px,1.7vw,17px);}
+  .nmk-card__cta{font-size:clamp(16px,2.6vw,26px);}
+}
+@media (max-width:650px){
+  .nmk-card {border-radius:22px;padding:21px 17px 25px;box-shadow:0 0 0 4px #8e0806,0 8px 20px rgba(71,15,4,.17),inset 0 0 0 2px rgba(255,255,255,.87);}
+  .nmk-card__top {gap:8px;padding-bottom:15px;}
+  .nmk-card__id{font-size:clamp(15px,4.5vw,23px);letter-spacing:.055em;}
+  .nmk-card__status{font-size:clamp(11px,3.45vw,16px);padding:8px 10px;}
+  .nmk-card__phone-wrap{padding:29px 0 16px;}
+  .nmk-card__phone{font-size:clamp(31px,8.7vw,62px);letter-spacing:-.062em;line-height:1.23;transform:none;}
+  .nmk-card__fit{font-size:clamp(13px,3.7vw,20px);gap:7px;padding:14px 0 22px;}
+  .nmk-card__fit::before{height:27px;width:4px;}
+  .nmk-card__scorebar{min-height:unset;border-radius:20px;padding:17px 14px 13px;gap:10px;}
+  .nmk-card__target{width:63px;height:61px;padding-right:9px;}
+  .nmk-card__score-heading{font-size:clamp(16px,4.9vw,24px);}
+  .nmk-card__score-sub{font-size:clamp(14px,3.8vw,19px);}
+  .nmk-card__score-medallion{padding-top:0;}
+  .nmk-card__laurel{width:38px;height:72px;}
+  .nmk-card__score-number{font-size:clamp(77px,22vw,119px);}
+  .nmk-card__score-denom{font-size:clamp(26px,7vw,42px);padding:8px 13px;}
+  .nmk-card__bottom{flex-direction:column;padding-top:27px;gap:19px;}
+  .nmk-card__price-group{gap:15px;}
+  .nmk-card__price{font-size:clamp(32px,9vw,52px);}
+  .nmk-card__meta{font-size:clamp(13px,3.7vw,18px);padding-left:13px;}
+  .nmk-card__meta-line{white-space:normal;}
+  .nmk-card__cta{width:100%;font-size:21px;padding:15px 20px;}
+  .nmk-card__cta img{width:24px;height:24px;}
+}
+@media (max-width:360px){
+  .nmk-card__phone{font-size:clamp(27px,8.4vw,31px);}
+  .nmk-card__laurel{width:28px;height:65px;}
+  .nmk-card__score-number{font-size:74px;}
+  .nmk-card__score-denom{font-size:25px;padding:7px 9px;}
+  .nmk-card__meta{font-size:12px;}
+}
+@media (prefers-reduced-motion:reduce){.nmk-card__cta{transition:none;}}

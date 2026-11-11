@@ -5,11 +5,11 @@ ROOT=Path(__file__).resolve().parents[1]
 def test_motion_assets_are_linked_to_both_modes():
     for p in [ROOT/'index.html',ROOT/'web/index.html']:
         doc=BeautifulSoup(p.read_text(encoding='utf-8'),'html.parser')
-        assert doc.select_one('link[href*="nine-motion.css?v=0.7.0"]')
-        assert doc.select_one('script[src*="nine-motion.js?v=0.7.0"]')
+        assert doc.select_one('link[href*="nine-motion.css?v=0.9.2"]')
+        assert doc.select_one('script[src*="nine-motion.js?v=1.0.0"]')
     doc=BeautifulSoup((ROOT/'index.html').read_text(encoding='utf-8'),'html.parser')
     scripts=[s.get('src') for s in doc.select('script[src]')]
-    assert scripts.index('web/offline-data.js?v=0.7.0') < scripts.index('web/offline-bridge.js?v=0.7.0') < scripts.index('web/app.js?v=0.6.0')
+    assert scripts.index('web/offline-data.js?v=0.7.0') < scripts.index('web/offline-bridge.js?v=0.7.0') < scripts.index('web/app.js?v=1.0.0')
 
 def test_reduced_motion_and_text_clarity():
     css=(ROOT/'web/nine-motion.css').read_text()

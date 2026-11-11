@@ -36,8 +36,7 @@ body.nine-theme{font-size:var(--nm-body);line-height:var(--nm-line);font-weight:
 .nine-theme .page-heading p{font-size:17px;line-height:1.7;opacity:1;color:#ffeed3}
 .nine-theme .eyebrow,.nine-theme .section-kicker,.nine-theme .section-label,.nine-theme .ni-kicker{font-size:14px;letter-spacing:.08em;line-height:1.5}
 .nine-theme .version-pill{font-size:14px;line-height:1.4;white-space:normal}
-.nine-theme .nine-brand-shade strong{font-size:16px;line-height:1.45}
-.nine-theme .nine-brand-shade span{font-size:14px;letter-spacing:.07em}
+
 .nine-theme .celestial-kicker{font-size:14px;letter-spacing:.07em}
 .nine-theme .hero-main h2{font-size:clamp(38px,3.6vw,57px);line-height:1.32}
 .nine-theme .hero-main p{font-size:17px;line-height:1.77;max-width:610px}
@@ -166,7 +165,7 @@ body.nine-theme{font-size:var(--nm-body);line-height:var(--nm-line);font-weight:
  .nine-theme .page-heading{flex-wrap:wrap;gap:12px}
  .nine-theme .page-heading h1{font-size:clamp(30px,7vw,37px)}
  .nine-theme .page-heading p{font-size:16px}
- .nine-theme .nine-brand-shade strong{font-size:14px}
+
  .nine-theme .celestial-hero{display:block;min-height:0}
  .nine-theme .hero-main{padding:30px 23px}
  .nine-theme .hero-main h2{font-size:clamp(34px,8vw,47px)}

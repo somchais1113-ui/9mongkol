@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>9มงคล — Standalone Number Card</title><link rel="stylesheet" href="../components/number-card.css"><style>body{margin:0;background:#f4f0e7;padding:clamp(14px,3vw,45px);font-family:'Noto Sans Thai',Tahoma,sans-serif}main{max-width:1440px;margin:0 auto}</style></head><body><main id="my-card"></main><script src="../components/number-card.js"></script><script>
+// Example: connect this data to your catalog/API/CMS.
+const numberData = {
+  id:'005', phone:'0965692970', status:'ยังไม่ยืนยัน', verified:false,
+  profession:'Designer / Creative', score:72, totalScore:100,
+  price:3900, catalogue:'DEMO — Catalogue A · 1',
+  seller:'แหล่งเสนอขาย · DEMO', buttonLabel:'ดูรายละเอียด',
+  detailUrl:'#number-details'
+};
+NineMongkolNumberCard.mount('#my-card', numberData, {assetBase:'../assets/icons'});
+</script></body></html>

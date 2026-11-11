@@ -4,7 +4,7 @@
 .nine-theme .nine-brand-banner{isolation:isolate}
 .nine-theme .nine-brand-banner::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(106deg,transparent 25%,rgba(255,237,174,.10) 46%,rgba(255,236,172,.18) 49%,transparent 55%);transform:translateX(-130%);animation:nm-banner-sheen 13s cubic-bezier(.2,.75,.4,1) infinite}
 .nine-theme .nine-brand-banner::after{content:"";position:absolute;z-index:3;pointer-events:none;inset:0;border-radius:20px;border:1px solid rgba(255,222,158,.5);box-shadow:inset 0 0 26px rgba(231,183,73,.12);animation:nm-border-breath 7s ease-in-out infinite}
-.nine-theme .nine-brand-shade{z-index:4}
+
 .nine-theme .nine-brand-banner>img{transform:none!important;filter:none!important}
 /* Gold particles belong to decoration, never to the content or text layer. */
 .nine-theme .nm-dust{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1}

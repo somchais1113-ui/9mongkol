@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 220" role="img" aria-label="Golden extended laurel right">
+<defs>
+ <linearGradient id="gold-leaf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff6b7"/><stop offset=".26" stop-color="#ffe15e"/><stop offset=".58" stop-color="#eba70e"/><stop offset=".85" stop-color="#c47a07"/><stop offset="1" stop-color="#fff0a2"/></linearGradient>
+ <linearGradient id="stem" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e7a31b"/><stop offset=".5" stop-color="#fff6b5"/><stop offset="1" stop-color="#b76f07"/></linearGradient>
+</defs>
+<g transform="translate(120 0) scale(-1 1)">
+ <path d="M92 211 C30 175 25 75 73 10" stroke="#925007" stroke-width="7" stroke-linecap="round" fill="none" opacity=".52"/>
+ <path d="M92 211 C30 175 25 75 73 10" stroke="url(#stem)" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+ <path d="M79.01 201.86 Q68.01 178.86 55.01 184.99 Q66.01 198.86 79.01 201.86Z" fill="url(#gold-leaf)" stroke="#fff5b7" stroke-width=".9"/>
+<path d="M70.75 193.98 Q81.75 170.98 93.75 176.84 Q83.75 190.98 70.75 193.98Z" fill="url(#gold-leaf)" stroke="#fff5b7" stroke-width=".9"/>
+<path d="M63.50 185.19 Q52.50 162.19 39.50 167.77 Q50.50 182.19 63.50 185.19Z" fill="url(#gold-leaf)" stroke="#fff5b7" stroke-width=".9"/>
+<path d="M57.26 175.57 Q68.26 152.57 80.26 157.88 Q70.26 172.57 57.26 175.57Z" fill="url(#gold-leaf)" stroke="#fff5b7" stroke-width=".9"/>
+<path d="M52.02 165.23 Q41.02 142.23 28.02 147.26 Q39.02 162.23 52.02 165.23Z" fill="url(#gold-leaf)" stroke="#fff5b7" stroke-width=".9"/>
+<path d="M47.79 154.27 Q58.79 131.27 70.79 136.03 Q60.79 151.27 47.79 154.27Z" fill="url(#gold-leaf)" stroke="#fff5b7" stroke-width=".9"/>
+<path d="M44.55 142.77 Q33.55 119.77 20.55 124.26 Q31.55 139.77 44.55 142.77Z" fill="url(#gold-leaf)" stroke="#fff5b7" stroke-width=".9"/>
+<path d="M42.31 130.85 Q53.31 107.85 65.31 112.06 Q55.31 127.85 42.31 130.85Z" fill="url(#gold-leaf)" stroke="#fff5b7" stroke-width=".9"/>
+<path d="M41.05 118.58 Q30.05 95.58 17.05 99.65 Q28.05 115.58 41.05 118.58Z" fill="url(#gold-leaf)" stroke="#fff5b7" stroke-width=".9"/>
+<path d="M40.78 106.08 Q51.78 83.08 63.78 87.42 Q53.78 103.08 40.78 106.08Z" fill="url(#gold-leaf)" stroke="#fff5b7" stroke-width=".9"/>
+<path d="M41.50 93.44 Q30.50 70.44 17.50 75.05 Q28.50 90.44 41.50 93.44Z" fill="url(#gold-leaf)" stroke="#fff5b7" stroke-width=".9"/>
+<path d="M43.18 80.76 Q54.18 57.76 66.18 62.64 Q56.18 77.76 43.18 80.76Z" fill="url(#gold-leaf)" stroke="#fff5b7" stroke-width=".9"/>
+<path d="M45.85 68.13 Q34.85 45.13 21.85 50.28 Q32.85 65.13 45.85 68.13Z" fill="url(#gold-leaf)" stroke="#fff5b7" stroke-width=".9"/>
+<path d="M49.48 55.64 Q60.48 32.64 72.48 38.07 Q62.48 52.64 49.48 55.64Z" fill="url(#gold-leaf)" stroke="#fff5b7" stroke-width=".9"/>
+<path d="M54.08 43.41 Q43.08 20.41 30.08 26.11 Q41.08 40.41 54.08 43.41Z" fill="url(#gold-leaf)" stroke="#fff5b7" stroke-width=".9"/>
+<path d="M59.64 31.52 Q70.64 8.52 82.64 14.49 Q72.64 28.52 59.64 31.52Z" fill="url(#gold-leaf)" stroke="#fff5b7" stroke-width=".9"/>
+ <path d="M90 210 C32 169 29 82 74 13" stroke="#fff5bf" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".8"/>
+</g></svg>

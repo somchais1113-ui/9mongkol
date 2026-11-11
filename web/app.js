@@ -13,9 +13,9 @@ let revealObserver;
 function toast(message){const node=$('toast');node.textContent=message;node.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>node.classList.remove('show'),3700)}
 function markLoadingCounters(){['metric-numbers','metric-offers','metric-careers','metric-rules'].forEach(id=>$(id)?.classList.add('loading-shimmer'))}
 function animateCount(node,target,{duration=1400,suffix=''}={}){if(!node)return;node.classList.remove('loading-shimmer');const end=Number(target||0);if(!motionEnabled){node.textContent=fmt(end)+suffix;return}const start=node.dataset.counted?Number(node.dataset.value||0):0;const t0=performance.now();node.dataset.value=String(end);function frame(now){const p=Math.min((now-t0)/duration,1);const eased=1-Math.pow(1-p,3);node.textContent=fmt(Math.round(start+(end-start)*eased))+suffix;if(p<1)requestAnimationFrame(frame);else node.dataset.counted='1'}requestAnimationFrame(frame)}
-function applyRevealTargets(scope=document){const selectors=['.page-heading','.hero-widget','.celestial-categories','.celestial-quote','.service-card','.stat-card','.panel','.rule-card','.career-panel','.workflow-item','.source-card','.source-row','.import-row','.search-panel','.table-toolbar','.number-card'];selectors.forEach(selector=>{scope.querySelectorAll(selector).forEach((node,index)=>{if(node.dataset.motionReady)return;node.dataset.motionReady='1';node.style.transitionDelay=`${Math.min(index*55,280)}ms`;if(revealObserver)revealObserver.observe(node);else node.classList.add('in-view')})})}
-function setupRevealObserver(){if(!motionEnabled||!('IntersectionObserver' in window)){document.querySelectorAll('.page-heading,.hero-widget,.celestial-categories,.celestial-quote,.service-card,.stat-card,.panel,.rule-card,.career-panel,.workflow-item,.source-card,.source-row,.import-row,.search-panel,.table-toolbar,.number-card').forEach(n=>n.classList.add('in-view'));return}revealObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in-view');revealObserver.unobserve(entry.target)}})},{threshold:.14,rootMargin:'0px 0px -8% 0px'})}
-function animateResultCards(){document.querySelectorAll('.number-card').forEach((card,index)=>{card.style.transitionDelay=`${Math.min(index*45,220)}ms`;if(!motionEnabled){card.classList.add('in-view');return}requestAnimationFrame(()=>card.classList.add('in-view'))})}
+function applyRevealTargets(scope=document){const selectors=['.page-heading','.hero-widget','.celestial-categories','.celestial-quote','.service-card','.stat-card','.panel','.rule-card','.career-panel','.workflow-item','.source-card','.source-row','.import-row','.search-panel','.table-toolbar','.number-card','.nmk-result-slot'];selectors.forEach(selector=>{scope.querySelectorAll(selector).forEach((node,index)=>{if(node.dataset.motionReady)return;node.dataset.motionReady='1';node.style.transitionDelay=`${Math.min(index*55,280)}ms`;if(revealObserver)revealObserver.observe(node);else node.classList.add('in-view')})})}
+function setupRevealObserver(){if(!motionEnabled||!('IntersectionObserver' in window)){document.querySelectorAll('.page-heading,.hero-widget,.celestial-categories,.celestial-quote,.service-card,.stat-card,.panel,.rule-card,.career-panel,.workflow-item,.source-card,.source-row,.import-row,.search-panel,.table-toolbar,.number-card,.nmk-result-slot').forEach(n=>n.classList.add('in-view'));return}revealObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in-view');revealObserver.unobserve(entry.target)}})},{threshold:.14,rootMargin:'0px 0px -8% 0px'})}
+function animateResultCards(){document.querySelectorAll('.nmk-result-slot').forEach((card,index)=>{card.style.transitionDelay=`${Math.min(index*45,220)}ms`;if(!motionEnabled){card.classList.add('in-view');return}requestAnimationFrame(()=>card.classList.add('in-view'))})}
 function setupHeroParallax(){const hero=document.querySelector('.celestial-hero');if(!hero||!motionEnabled)return;const medallion=hero.querySelector('.celestial-medallion');const widget=hero.querySelector('.hero-widget');let raf=0;hero.addEventListener('pointermove',event=>{const rect=hero.getBoundingClientRect();const mx=(event.clientX-rect.left)/rect.width-.5;const my=(event.clientY-rect.top)/rect.height-.5;if(raf)cancelAnimationFrame(raf);raf=requestAnimationFrame(()=>{if(medallion)medallion.style.transform=`translate(${mx*10}px,${my*10-2}px)`;if(widget)widget.style.transform=`translate(${mx*-8}px,${my*-6}px)`})});hero.addEventListener('pointerleave',()=>{if(medallion)medallion.style.transform='';if(widget)widget.style.transform=''})}
 async function request(path,options={}){
  const resp=await fetch(path,options);let data;
@@ -75,13 +75,26 @@ async function loadResults(){
   $('page-next').disabled=res.page*res.page_size>=res.total;
   $('page-summary').textContent=res.total?`แสดง ${fmt((res.page-1)*res.page_size+1)}–${fmt(Math.min(res.page*res.page_size,res.total))} จาก ${fmt(res.total)} เบอร์`:'ไม่มีผลลัพธ์';
   const currentCareer=state.meta.careers.find(c=>c.id===$('filter-career').value)?.name||'อาชีพที่เลือก';
-  $('result-cards').innerHTML=res.items.length?res.items.map((row,index)=>`<article class="number-card">
-    <div class="number-card-top"><span class="number-card-kicker">NUMBER / ${String((res.page-1)*res.page_size+index+1).padStart(3,'0')}</span><span class="number-card-status ${esc(row.status)}">${esc(statusText[row.status]||'ไม่ทราบสถานะ')}</span></div>
-    <div class="number-card-number">${prettyNum(row.number)}</div>
-    <div class="number-card-career">ความสอดคล้องกับ <b>${esc(currentCareer)}</b></div>
-    <div class="number-card-fit"><span>Career Fit Index · คะแนนสาธิต</span><strong>${Math.round(row.fit_score)}<small>/100</small></strong></div>
-    <div class="number-card-foot"><div><div class="number-card-price">${money(row.price)}</div><div class="number-card-supplier">${esc(row.source)} · ${row.offer_count} แหล่งเสนอขาย${row.is_demo?' · DEMO':''}</div></div><button type="button" data-detail="${esc(row.number)}">ดูรายละเอียด ↗</button></div>
-  </article>`).join(''):'<div class="empty-results">ไม่พบหมายเลขตรงเงื่อนไข ลองปรับการเลือกตัวเลข หรือ Import เบอร์จากแหล่งข้อมูลที่ได้รับอนุญาต</div>';
+  // Render actual API/OfflineBridge search results with the user's supplied 9MONGKOL component.
+  // Do not use the sample numbers, prices, or scores bundled with the design kit.
+  const numberCard=window.NineMongkolNumberCard;
+  if(!numberCard) throw new Error('ไม่พบ Number Card Component กรุณาตรวจไฟล์ web/number-card');
+  const componentStyle=document.getElementById('nmk-card-css');
+  const assetBase=componentStyle?new URL('icons/',componentStyle.href).href.replace(/\/$/,''):'web/number-card/icons';
+  $('result-cards').innerHTML=res.items.length?res.items.map((row,index)=>{
+    const cardData={
+      id:String((res.page-1)*res.page_size+index+1).padStart(3,'0'),
+      phone:row.number, profession:currentCareer, score:Math.round(row.fit_score),
+      totalScore:100,price:row.price==null?'ไม่ระบุราคา':row.price,
+      status:statusText[row.status]||'ยังไม่ยืนยัน',verified:false,
+      catalogue:row.source+(row.is_demo?' · DEMO':''),
+      seller:`${Number(row.offer_count)||1} รายการเสนอขาย · ${row.is_demo?'ข้อมูลสาธิต':'แหล่งข้อมูลที่นำเข้า'}`,
+      buttonLabel:'ดูรายละเอียด',detailUrl:'#view-explorer'
+    };
+    const markup=numberCard.render(cardData,{assetBase})
+      .replace('class="nmk-card__cta"',`class="nmk-card__cta" data-detail="${esc(row.number)}"`);
+    return `<div class="nmk-result-slot">${markup}</div>`;
+  }).join(''):'<div class="empty-results">ไม่พบหมายเลขตรงเงื่อนไข ลองปรับตัวกรอง หรือ Import เบอร์จากแหล่งข้อมูลที่ได้รับอนุญาต</div>';
   $('result-body').innerHTML=res.items.length?res.items.map(row=>`<tr><td><button class="phone-link" data-detail="${esc(row.number)}">${prettyNum(row.number)}</button><div class="subline">${row.is_demo?'DEMO / SYNTHETIC':'IMPORTED'}</div></td><td><div class="fit-score"><strong>${row.fit_score}<span style="font-size:10px;color:#799b8b">/100</span></strong><span class="mini-track"><span style="width:${row.fit_score}%"></span></span></div></td><td><strong>${money(row.price)}</strong><div class="subline">${esc(row.source)}</div></td><td><span class="status-label ${esc(row.status)}">${statusText[row.status]||'ไม่ทราบสถานะ'}</span></td><td><strong>${row.offer_count}</strong><div class="subline">seller listing(s)</div></td><td><button class="view-button" data-detail="${esc(row.number)}">View detail ↗</button></td></tr>`).join(''):'<tr><td colspan="6" class="empty-row">ไม่พบหมายเลขตรงเงื่อนไข ลองปรับตัวกรอง หรือ Import CSV เพิ่ม</td></tr>';
   applyRevealTargets($('view-explorer'));animateResultCards();
  }catch(e){if(serial===state.requestSerial){$('result-body').innerHTML=`<tr><td colspan="6" class="empty-row">${esc(e.message)}</td></tr>`;$('result-cards').innerHTML=`<div class="empty-results">${esc(e.message)}</div>`;toast(e.message)}}
@@ -171,9 +184,18 @@ function bindUI(){
  document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.view)));
  document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.jump)));
  $('mobile-menu').addEventListener('click',()=> $('sidebar').classList.toggle('open'));
+ // Toggle presentation only; search filters, data and Career Fit scores do not change.
+ const gridBtn=$('nmk-view-grid'),largeBtn=$('nmk-view-large');
+ function setCardView(mode){$('result-cards').classList.toggle('is-large',mode==='large');gridBtn.classList.toggle('is-active',mode==='grid');largeBtn.classList.toggle('is-active',mode==='large');gridBtn.setAttribute('aria-pressed',String(mode==='grid'));largeBtn.setAttribute('aria-pressed',String(mode==='large'))}
+ gridBtn.addEventListener('click',()=>setCardView('grid'));
+ largeBtn.addEventListener('click',()=>setCardView('large'));
+ // Design Lock: use the original-reference large card on initial search.
+ // Visitors can switch to 2-column catalog mode for fast scanning.
+ setCardView('large');
+
  renderDigitKeypads();buildPositionInputs();
  $('hero-analyze-form').addEventListener('submit',e=>{e.preventDefault();const number=$('hero-analyze-number').value;$('analyze-number').value=number;setView('analyze');runAnalyze(number,$('analyze-career').value)});
- $('result-cards').addEventListener('click',e=>{const b=e.target.closest('[data-detail]');if(b){$('analyze-career').value=$('filter-career').value;runAnalyze(b.dataset.detail,$('filter-career').value,true)}});
+ $('result-cards').addEventListener('click',e=>{const b=e.target.closest('[data-detail]');if(b){e.preventDefault();$('analyze-career').value=$('filter-career').value;runAnalyze(b.dataset.detail,$('filter-career').value,true)}});
  $('quick-search').addEventListener('click',()=>{state.selectedCareer=$('home-career').value;$('filter-career').value=state.selectedCareer;$('analyze-career').value=state.selectedCareer;$('filter-budget').value=$('home-budget').value;state.page=1;setView('explorer')});
  $('filter-apply').addEventListener('click',()=>{state.page=1;loadResults()});
  $('filter-reset').addEventListener('click',()=>{['filter-query','filter-sequence','filter-required','filter-excluded','filter-budget'].forEach(id=>$(id).value='');document.querySelectorAll('.position-slot:not(:disabled)').forEach(n=>n.value='');updateDigitButtons();$('filter-source').value='';$('filter-status').value='all';$('filter-sort').value='fit';state.page=1;loadResults()});

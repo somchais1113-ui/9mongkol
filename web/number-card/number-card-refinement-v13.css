@@ -1,0 +1,95 @@
+/* 9MONGKOL v1.3 — focused card refinements only.
+   Keep v1.2 layout, dynamic data and assets. Typography and icon dimensions are
+   responsive so the numeric groups remain inside their cards. */
+
+/* Remove the diffuse halo behind the numeric Career Fit score, but keep the
+   metallic-gold face and its crisp, short dimensional shadow. */
+.nine-theme #view-explorer .nmk-card__score-medallion::before {
+  content:none!important;
+  display:none!important;
+  background:none!important;
+  box-shadow:none!important;
+}
+.nine-theme #view-explorer .nmk-card__score-number {
+  text-shadow:none!important;
+  filter:drop-shadow(0 2px 0 #98500a) drop-shadow(0 4px 0 #542105)!important;
+}
+/* Wreaths themselves should be clear gold, not surrounded by blurry glow. */
+.nine-theme #view-explorer .nmk-card__laurel {
+  filter:drop-shadow(0 2px 0 #8a480a66)!important;
+  opacity:1;
+  object-fit:fill;
+}
+
+/* Full-width reference card: increase the phone number and price.
+   Slightly wider, taller laurels frame the whole score group. */
+@media(min-width:1101px) {
+  .nine-theme #view-explorer .nmk-results.is-large .nmk-card__phone {
+    font-size:clamp(76px,11.25vw,164px);
+  }
+  .nine-theme #view-explorer .nmk-results.is-large .nmk-card__price {
+    font-size:clamp(55px,6.3vw,82px);
+  }
+  .nine-theme #view-explorer .nmk-results.is-large .nmk-card__laurel {
+    width:61px;height:159px;
+  }
+  .nine-theme #view-explorer .nmk-results.is-large .nmk-card__scorebar {
+    min-height:211px;
+  }
+}
+
+/* Regular two-column catalog: prioritize readability without overflow. */
+@media(min-width:651px) {
+  .nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__phone {
+    font-size:clamp(36px,4.35vw,66px);
+  }
+  .nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__price {
+    font-size:clamp(34px,3vw,45px);
+  }
+  .nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__laurel {
+    width:25px;height:82px;
+  }
+}
+
+/* Medium tablets: maintain the same visual hierarchy and leave sufficient width. */
+@media(min-width:651px) and (max-width:1100px) {
+  .nine-theme #view-explorer .nmk-results.is-large .nmk-card__phone {
+    font-size:clamp(61px,9.7vw,121px);
+  }
+  .nine-theme #view-explorer .nmk-results.is-large .nmk-card__price {
+    font-size:clamp(49px,6.3vw,69px);
+  }
+  .nine-theme #view-explorer .nmk-results.is-large .nmk-card__laurel {
+    width:42px;height:123px;
+  }
+}
+
+/* Small screens: grow the amount and number modestly to avoid horizontal scroll. */
+@media(max-width:650px) {
+  .nine-theme #view-explorer .nmk-results .nmk-card__phone,
+  .nine-theme #view-explorer .nmk-results.is-large .nmk-card__phone {
+    font-size:clamp(30px,9.25vw,45px);
+  }
+  .nine-theme #view-explorer .nmk-card__price,
+  .nine-theme #view-explorer .nmk-results.is-large .nmk-card__price {
+    font-size:clamp(37px,9.4vw,49px);
+  }
+  .nine-theme #view-explorer .nmk-card__laurel,
+  .nine-theme #view-explorer .nmk-results.is-large .nmk-card__laurel {
+    width:37px;height:99px;
+  }
+}
+@media(max-width:360px) {
+  .nine-theme #view-explorer .nmk-results .nmk-card__phone,
+  .nine-theme #view-explorer .nmk-results.is-large .nmk-card__phone {
+    font-size:clamp(26px,8.65vw,32px);
+  }
+  .nine-theme #view-explorer .nmk-card__price,
+  .nine-theme #view-explorer .nmk-results.is-large .nmk-card__price {
+    font-size:clamp(34px,10vw,39px);
+  }
+  .nine-theme #view-explorer .nmk-card__laurel,
+  .nine-theme #view-explorer .nmk-results.is-large .nmk-card__laurel {
+    width:30px;height:86px;
+  }
+}

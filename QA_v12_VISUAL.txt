@@ -1,0 +1,6 @@
+Number Card v1.2 — Standalone Chromium QA
+Master viewport 1440px: card 1240px, phone/score bar within card, no document horizontal overflow.
+Compact viewport 1440px: card 680px, Ruby hyphens visible, score from data, no document horizontal overflow.
+Mobile viewport 390px: card 338px, 2-row scorebar, no document horizontal overflow.
+Small viewport 320px: card 268px, no document horizontal overflow.
+Note: local file:// and localhost navigation are blocked by Chromium administrator in this environment; screenshots use inline HTML/CSS/SVG with the same component source. Full end-to-end browser route was not verified here.

@@ -1,3 +1,17 @@
+# 9มงคล — Full Package v1.3 (Number Card Refinement)
+
+> รุ่น v1.3 ต่อจาก v1.2 โดยปรับเฉพาะการ์ดผลค้นหา: เบอร์ใหญ่ขึ้น ราคาใหญ่ขึ้น ตัวเลขคะแนนคมขึ้น และรวงข้าวทองยาวขึ้น  ดู `CHANGELOG_v1_3_TH.md`
+
+# 9มงคล v1.2 — Card Design Lock (Ruby Red + Metallic Gold)
+
+ใช้ภาพการ์ดล่าสุดที่ผู้ใช้ส่งเป็น Visual Master เพิ่มเอฟเฟกต์สีแดง–ทองและโครงคะแนนแบบต้นฉบับ โดยข้อมูลยังเป็น HTML/JS แบบ Dynamic; อ่าน `DESIGN_LOCK_v1_2_TH.md`
+
+# 9มงคล v1.1 ปรับการ์ดค้นหาให้กวาดสายตาอ่านง่าย: เบอร์จัดกลุ่ม 3–3–4, คะแนนแยก 71 / 100, ระยะภายในดีขึ้น คง Logic เดิม
+
+## 9มงคล v1.0 — Number Card Edition
+
+ปรับผลค้นหาเบอร์ด้วย HTML Objects Kit ที่ผู้ใช้ส่งมา รองรับการ์ด 2 คอลัมน์และการ์ดใหญ่ พร้อมทั้ง Online/Offline โดยคงระบบวิเคราะห์เดิมทุกอย่าง ดู `CHANGELOG_v1_0_TH.md` และ `NUMBER_CARD_GUIDE_TH.md`
+
 # 9มงคล v0.9 — Brand Logo & Steady Hover Edition
 
 โลโก้ทางการแบบทอง–ดอกบัวตามไฟล์ล่าสุดของผู้ใช้ ปรับ hover ไม่ยกตัว และปิด parallax ตามเมาส์ ดู `CHANGELOG_v0_9_TH.md`, `LOGO_IMPLEMENTATION_TH.md`
@@ -94,3 +108,7 @@ node --check web/insights.js
 ```
 
 ดู `QUICK_START_TH.md` สำหรับคู่มือภาษาไทย และ `CHANGELOG_v0_8_TH.md` สำหรับรายละเอียดที่เปลี่ยนแปลง
+
+
+## v0.9.2 — Banner Strip Removed
+นำแถบข้อความทึบด้านล่างแบนเนอร์ (9MONGKOL • PREMIUM NUMBER DISCOVERY) ออกถาวรทั้ง Offline และ Backend ดูรายละเอียดใน `CHANGELOG_v0_9_2_TH.md`

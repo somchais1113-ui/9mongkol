@@ -2,8 +2,8 @@ from pathlib import Path
 root=Path(__file__).resolve().parents[1]
 
 def test_readability_css_loaded_in_both_modes():
-    assert 'nine-readable.css?v=0.8.0' in (root/'web/index.html').read_text('utf-8')
-    assert 'web/nine-readable.css?v=0.8.0' in (root/'index.html').read_text('utf-8')
+    assert 'nine-readable.css?v=0.9.2' in (root/'web/index.html').read_text('utf-8')
+    assert 'web/nine-readable.css?v=0.9.2' in (root/'index.html').read_text('utf-8')
 
 def test_readability_tokens_and_reduced_motion_remain():
     css=(root/'web/nine-readable.css').read_text('utf-8')

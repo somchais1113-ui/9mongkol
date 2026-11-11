@@ -8,7 +8,7 @@ def test_brand_has_all_required_pages_and_assets():
     for page in [ROOT/'index.html',WEB/'index.html']:
         doc=BeautifulSoup(page.read_text(encoding='utf-8'),'html.parser')
         assert '9 มงคล' in doc.title.get_text()
-        assert 'nine-mongkol.css?v=0.7.0' in str(doc)
+        assert 'nine-mongkol.css?v=0.9.2' in str(doc)
         assert doc.select_one('.nine-brand-banner img')
         assert len(doc.select('.nine-deity-card img')) == 4
         assert doc.select_one('[data-ni-image]')

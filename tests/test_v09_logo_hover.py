@@ -19,9 +19,9 @@ def test_new_lotus_logo_exists_and_is_used():
 def test_polish_loaded_in_both_modes():
     for p in (ROOT/'web/index.html',ROOT/'index.html'):
         src=p.read_text(encoding='utf-8')
-        assert 'nine-polish.css?v=0.9.1' in src
-        if p==ROOT/'index.html':assert 'web/nine-polish.css?v=0.9.1' in src
-        else:assert '/assets/nine-polish.css?v=0.9.1' in src
+        assert 'nine-polish.css?v=0.9.2' in src
+        if p==ROOT/'index.html':assert 'web/nine-polish.css?v=0.9.2' in src
+        else:assert '/assets/nine-polish.css?v=0.9.2' in src
     css=(ROOT/'web/nine-polish.css').read_text(encoding='utf-8')
     assert 'transform:none!important' in css
     assert 'width:min(300px,95%)' not in css

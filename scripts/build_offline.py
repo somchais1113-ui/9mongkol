@@ -45,6 +45,9 @@ html=html.replace('/assets/nine-polish.css?v=0.9.0','web/nine-polish.css?v=0.9.0
 html=html.replace('/assets/nine-motion.js?v=0.7.0','web/nine-motion.js?v=0.7.0')
 html=html.replace('/assets/assets/number-visual.svg','web/assets/number-visual.svg')
 html=html.replace('/assets/assets/9mongkol/','web/assets/9mongkol/')
+# Any newly added assets/components must remain file:// compatible.
+html=html.replace('href="/assets/assets/', 'href="web/assets/').replace('src="/assets/assets/', 'src="web/assets/')
+html=html.replace('href="/assets/', 'href="web/').replace('src="/assets/', 'src="web/')
 html=html.replace('<script defer="" src="web/insights.js?v=0.6.0"></script>',
     '<script defer src="web/offline-data.js?v=0.7.0"></script>\n'
     '<script defer src="web/offline-bridge.js?v=0.7.0"></script>\n'
