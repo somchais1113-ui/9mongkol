@@ -1,0 +1,25 @@
+{
+ "version":"CAREER-2026.11.1",
+ "attributes":[
+  {"id":"communication","name":"การสื่อสาร","description":"สื่อสารแนวคิดและประสานงาน"},
+  {"id":"negotiation","name":"การเจรจา","description":"ต่อรองและสร้างข้อตกลง"},
+  {"id":"relationships","name":"มนุษยสัมพันธ์","description":"ร่วมงานและดูแลความสัมพันธ์"},
+  {"id":"leadership","name":"ภาวะผู้นำ","description":"กำหนดทิศทางและตัดสินใจ"},
+  {"id":"creativity","name":"ความคิดสร้างสรรค์","description":"สร้างแนวคิดและทางเลือกใหม่"},
+  {"id":"analysis","name":"การวิเคราะห์","description":"ใช้ตรรกะและข้อมูลแก้ปัญหา"}
+ ],
+ "careers":[
+  {"id":"designer","name":"Designer / Creative","group":"Creative","weights":{"communication":20,"negotiation":5,"relationships":10,"leadership":5,"creativity":40,"analysis":20}},
+  {"id":"design_manager","name":"Design Supervisor / Lead","group":"Creative","weights":{"communication":15,"negotiation":10,"relationships":10,"leadership":25,"creativity":25,"analysis":15}},
+  {"id":"sales","name":"Sales / Business Development","group":"Commercial","weights":{"communication":30,"negotiation":30,"relationships":20,"leadership":10,"creativity":5,"analysis":5}},
+  {"id":"marketing","name":"Marketing / Brand","group":"Commercial","weights":{"communication":25,"negotiation":15,"relationships":15,"leadership":10,"creativity":25,"analysis":10}},
+  {"id":"manager","name":"Manager / Executive","group":"Management","weights":{"communication":15,"negotiation":15,"relationships":10,"leadership":35,"creativity":5,"analysis":20}},
+  {"id":"business_owner","name":"Business Owner / Entrepreneur","group":"Management","weights":{"communication":10,"negotiation":25,"relationships":10,"leadership":25,"creativity":10,"analysis":20}},
+  {"id":"programmer","name":"Software / IT / Data","group":"Technology","weights":{"communication":10,"negotiation":5,"relationships":5,"leadership":5,"creativity":20,"analysis":55}},
+  {"id":"engineer","name":"Engineering / Production","group":"Technology","weights":{"communication":10,"negotiation":5,"relationships":5,"leadership":15,"creativity":10,"analysis":55}},
+  {"id":"finance","name":"Accounting / Finance","group":"Professional","weights":{"communication":15,"negotiation":10,"relationships":5,"leadership":5,"creativity":5,"analysis":60}},
+  {"id":"teacher","name":"Teacher / Trainer","group":"Professional","weights":{"communication":35,"negotiation":5,"relationships":20,"leadership":10,"creativity":10,"analysis":20}},
+  {"id":"service","name":"Service / Hospitality","group":"Service","weights":{"communication":30,"negotiation":10,"relationships":40,"leadership":5,"creativity":10,"analysis":5}},
+  {"id":"creator","name":"Content Creator / Artist","group":"Creative","weights":{"communication":20,"negotiation":5,"relationships":10,"leadership":5,"creativity":50,"analysis":10}}
+ ]
+}

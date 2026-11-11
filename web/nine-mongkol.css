@@ -1,0 +1,234 @@
+/* 9มงคล · Brand System v0.6
+   Source of truth: user-supplied 9MONGKOL_Web_Asset_Kit_v1.
+   Integrated into Number Intelligence rule-based MVP without changing evaluation formulas.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700;800;900&family=Noto+Serif+Thai:wght@500;600;700&display=swap');
+:root {
+  --nine-crimson:#7A0008;--nine-vermilion:#C01818;--nine-gold:#D4AF37;--nine-gold-light:#FFE3A0;
+  --nine-ivory:#F8F1E3;--nine-onyx:#1B0809;--nine-wine:#3B0408;--nine-highlight:#FFF4C7;
+  --navy:#3B0408;--navy2:#68070d;--ink:#391014;--slate:#78565b;--mint:#ffe3a0;
+  --teal:#bb8931;--background:#3b0408;--white:#fff;--line:#e4c994;--soft:#fff6e5;--gold:#D4AF37;--cream:#F8F1E3;--deep:#250207;
+}
+html{scroll-behavior:smooth}body.nine-theme{font-family:'Noto Sans Thai',Tahoma,Arial,sans-serif;color:#371419;background:#270207 url('assets/9mongkol/cosmic-red.jpg') center top / auto 1450px repeat-y}
+.nine-theme button,.nine-theme select,.nine-theme input,.nine-theme textarea{font-family:inherit}
+.nine-theme .app-shell{display:block;min-height:100vh}
+.nine-theme .main-wrap{background:radial-gradient(circle at 50% 0,#8c091723,transparent 600px);min-height:100vh}
+.nine-theme .content{max-width:1370px;padding:24px clamp(17px,3vw,42px) 55px}
+.nine-theme .celestial-announcement{height:35px;background:linear-gradient(90deg,#260207,#60040b 53%,#260207);border-bottom:1px solid #b27d30;box-shadow:inset 0 -1px 0 #ffe6a31a;color:#ffe4a3;font-size:11px;gap:15px;letter-spacing:.075em}
+.nine-theme .celestial-announcement strong{font-family:'Noto Serif Thai',Tahoma,serif;font-size:17px;color:#ffe3a0;letter-spacing:0}
+.nine-theme .ann-small{font-weight:600;color:#e3b16c}
+.nine-theme .ann-stars{color:#edc77e;letter-spacing:0}
+.nine-theme .sidebar{background:linear-gradient(125deg,#450308,#210105 76%);border-bottom:2px solid #c79239;box-shadow:0 9px 28px #1b000b77;height:91px;padding:0 max(23px,calc((100vw - 1350px)/2));z-index:60}
+.nine-theme .brand{display:flex;gap:12px;align-items:center;min-width:180px;padding:0;margin:0 23px 0 0;flex-shrink:0}
+.nine-theme .nine-nav-logo{width:164px;height:68px;object-fit:contain;object-position:left center;filter:drop-shadow(0 1px 9px #e8bb6746)}
+.nine-theme .nine-nav-copy{display:none}
+.nine-theme .navigation{gap:6px;align-items:center}
+.nine-theme .nav-item{color:#ffe8b7;background:transparent;border:1px solid transparent;font-size:13px;font-weight:750;white-space:nowrap;padding:12px 13px;border-radius:9px}
+.nine-theme .nav-item .nav-icon{color:#d9ae5b;font-size:19px;width:20px}
+.nine-theme .nav-item.active{background:linear-gradient(120deg,#fff0c7,#d2a543);color:#3a0508;border-color:#e9bc66;box-shadow:0 5px 18px #ca8c272d}
+.nine-theme .nav-item.active .nav-icon{color:#67121c}
+.nine-theme .nav-item:hover:not(.active){background:#8b171b80;color:#fff4d2;border-color:#c6924840}
+.nine-theme .side-label{color:#bd9861}
+.nine-theme .topbar{height:46px;border-bottom:1px solid #c19a5b4d;background:#4a050b96;color:#f8e4bf;max-width:none;padding:0 max(23px,calc((100vw - 1285px)/2));backdrop-filter:none}
+.nine-theme .breadcrumb>span:first-child,.nine-theme .breadcrumb strong,.nine-theme .breadcrumb-divider{color:#f4d596}
+.nine-theme .status-chip{color:#f2ca7c}
+.nine-theme .topbar .button{background:linear-gradient(100deg,#ffe7aa,#c9902e);color:#431012;border:1px solid #f8dfaa;border-radius:8px;box-shadow:0 4px 12px #2000084d}
+.nine-theme .topbar .button:hover{background:#fff1c7;color:#431012}
+.nine-theme .page-heading h1,.nine-theme .page-heading p{color:#fff3d9}
+.nine-theme .page-heading h1{font-family:'Noto Serif Thai',Tahoma,serif;font-weight:750;font-size:clamp(32px,3vw,44px);letter-spacing:-.02em}
+.nine-theme .page-heading p{opacity:.85;font-size:14px}
+.nine-theme .eyebrow,.nine-theme .section-kicker,.nine-theme .section-label{color:#d9a853;font-size:11px}
+.nine-theme .version-pill{border:1px solid #a77530;background:#fff1cc0d;color:#ffdda0}
+.nine-theme .nine-page-badge{width:69px;height:69px;object-fit:contain;filter:drop-shadow(0 8px 13px #0005)}
+/* Brand art hero, not a static mock-up: real asset displayed inside the functional SPA. */
+.nine-theme .nine-brand-banner{position:relative;height:clamp(196px,24vw,305px);width:100%;border:2px solid #d2a248;border-radius:22px 22px 0 0;overflow:hidden;background:#3b0408;box-shadow:0 18px 48px #0d00068a;isolation:isolate}
+.nine-theme .nine-brand-banner>img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;image-rendering:auto;filter:none}
+.nine-theme .nine-brand-shade{position:absolute;inset:auto 0 0;background:linear-gradient(0deg,#2d010ac9,transparent);display:flex;justify-content:space-between;gap:14px;align-items:end;padding:26px 27px 15px;color:#ffe6b0;text-shadow:0 2px 9px #190104}
+.nine-theme .nine-brand-shade span{font-size:10px;font-weight:800;letter-spacing:.19em}.nine-theme .nine-brand-shade strong{font-size:14px;font-weight:750}
+.nine-theme .celestial-hero{border-color:#d2a248;border-top:none;border-radius:0;min-height:555px;grid-template-columns:1.1fr .92fr;box-shadow:0 14px 42px #0d000669}
+.nine-theme .hero-main{background:linear-gradient(125deg,#30010794,#54040a4d),url('assets/9mongkol/red-silk.jpg') center/cover;min-height:510px;padding:40px clamp(25px,5vw,65px) 42px}
+.nine-theme .hero-main:before{opacity:.6;background:radial-gradient(circle,#ffd26944,transparent 68%)}
+.nine-theme .hero-main:after{border-color:#ffce7057}
+.nine-theme .celestial-kicker{color:#f9d68f;font-size:12px;letter-spacing:.16em;font-weight:800}
+.nine-theme .celestial-medallion{height:145px;width:145px;flex-basis:145px;background:transparent;border:0;box-shadow:none;border-radius:0;margin:11px 0 11px 0;animation:medallionFloat 6.5s ease-in-out infinite}
+.nine-theme .celestial-medallion:before,.nine-theme .celestial-medallion:after{display:none}
+.nine-theme .nine-hero-badge{height:100%;width:100%;object-fit:contain;filter:drop-shadow(0 0 22px #efc15785)}
+.nine-theme .hero-main h2{font-family:'Noto Serif Thai',Tahoma,serif;font-weight:750;font-size:clamp(38px,3.55vw,55px);line-height:1.25;letter-spacing:-.025em;color:#fff3dc;text-shadow:0 4px 14px #110004}
+.nine-theme .hero-main h2 .nine-hero-word{font-size:1.14em;color:#ffe9ac}
+.nine-theme .hero-main h2 .gold-line{color:#ffd978;margin:0;font-size:.94em}
+.nine-theme .hero-main h2 em{font-size:.75em;color:#f7e8cf}
+.nine-theme .hero-main p{max-width:565px;color:#f8dfc7;font-size:14px;line-height:1.86}
+.nine-theme .hero-primary-actions .button{font-weight:850;padding:15px 22px;min-height:48px}
+.nine-theme .hero-primary-actions .button-dark,.nine-theme .button-light{background:linear-gradient(105deg,#fff0be,#c99539 55%,#ffe3a0);border-color:#ffeba9;color:#44100f;box-shadow:0 7px 23px #21000460}
+.nine-theme .hero-primary-actions .button-light{background:linear-gradient(90deg,#52060d,#800d15);color:#ffe7ad;border:1px solid #d4af37}
+.nine-theme .hero-small-note{font-size:11px;line-height:1.65;color:#fbe6c9}
+.nine-theme .hero-widget{background:linear-gradient(145deg,#fffdf6,#f7ebd5 80%,#f2e0be);border-left:3px solid #c89e55;padding:30px 32px 27px}
+.nine-theme .hero-widget:before{border:1px solid #e0bc7c}.nine-theme .hero-widget:after{border-color:#edd6a5}
+.nine-theme .hero-widget h3{font-family:'Noto Serif Thai',Tahoma,serif;font-size:clamp(25px,2.4vw,35px);color:#680912;letter-spacing:-.03em}
+.nine-theme .hero-widget h3 span{color:#bc1a1b}
+.nine-theme .hero-widget p{color:#7a5653;font-size:13px}
+.nine-theme .hero-inline-form input{border:1px solid #d4a45c;background:#fff;color:#640b13;font-size:15px;min-height:53px}
+.nine-theme .hero-inline-form button{background:linear-gradient(115deg,#970b15,#57030c);border:1px solid #bb8b3a;color:#fff1d2;min-height:48px}
+.nine-theme .hero-inline-form button:hover{background:#b5121b}
+.nine-theme .ni-hero-art{width:215px;height:168px;border-radius:15px;background:#34040d;box-shadow:0 0 0 3px #f6edcd,0 0 0 5px #cb982f,0 14px 28px #50040733}
+.nine-theme .ni-hero-art img{object-fit:cover}
+.nine-theme .ni-hero-art button{background:#fff7e6ee;color:#6b110e;border-color:#cba45b}
+.nine-theme .celestial-categories{background:linear-gradient(120deg,#380308,#7a0008 45%,#380308);border:2px solid #d2a248;border-top:none;border-radius:0 0 14px 14px;box-shadow:0 14px 36px #17000650}
+.nine-theme .celestial-categories button{padding:24px 16px;color:#fbe6bb;border-right-color:#cd96543e}
+.nine-theme .celestial-categories button:hover{background:#a9161f66}
+.nine-theme .celestial-categories strong{font-size:13px;color:#fff0cf}.nine-theme .celestial-categories small{font-size:11px;color:#dabe94}
+.nine-theme .category-symbol{width:42px;flex:0 0 42px;display:grid;place-items:center}
+.nine-theme .category-symbol img{display:block;width:36px;height:36px;object-fit:contain;filter:drop-shadow(0 0 7px #eac7754d)}
+.nine-theme .cat-chevron{color:#d6a951}
+.nine-theme .celestial-quote{background:linear-gradient(90deg,#310308,#70040c,#310308);border-color:#d1a150;color:#fbe1aa;margin-top:28px;padding:19px}
+.nine-theme .celestial-quote strong{color:#ffe4ae;font-size:19px}.nine-theme .celestial-quote small{color:#d8b27a}
+.nine-theme .section-heading h2,.nine-theme .ni-inventory-header h2{color:#ffe7b2;font-family:'Noto Serif Thai',Tahoma,serif;font-size:clamp(28px,2.6vw,37px)}
+.nine-theme .section-heading p,.nine-theme .ni-inventory-header p{color:#e6c9ac;font-size:13px}
+.nine-theme .section-label{color:#d9ae60}
+.nine-theme .service-grid{gap:18px}
+.nine-theme .service-card{border:1px solid #ba8136;border-radius:14px;min-height:265px;background:linear-gradient(155deg,#72080e,#310307) !important;box-shadow:0 16px 30px #12000483;padding:24px;color:#fff0ce!important}
+.nine-theme .service-card:nth-child(2){background:linear-gradient(145deg,#f9ebca,#f2d8a6)!important;color:#52100e!important}
+.nine-theme .service-card strong{font-size:21px;font-weight:850;color:inherit}
+.nine-theme .service-card .service-text{font-size:12px;color:#ebcdad}.nine-theme .service-card:nth-child(2) .service-text{color:#72524d}
+.nine-theme .service-card .service-link{color:#f1cf84}.nine-theme .service-card:nth-child(2) .service-link{color:#770915}
+.nine-theme .service-emblem{height:59px;display:flex;align-items:center}
+.nine-theme .service-emblem img{width:53px;height:53px;object-fit:contain;filter:drop-shadow(0 4px 12px #d8a5373f)}
+.nine-theme .service-index{color:#f0cb7b}.nine-theme .service-card:nth-child(2) .service-index{color:#955d16}
+/* Visual heritage section: sourced directly from the provided asset kit */
+.nine-theme .nine-gallery{margin:29px 0 46px;padding:29px 28px 31px;background:linear-gradient(135deg,#2d0308f9,#56030df5),url('assets/9mongkol/cosmic-red.jpg') center/cover;border:1px solid #bd8b36;border-radius:18px;box-shadow:0 15px 38px #1b000867}
+.nine-theme .nine-gallery-heading{text-align:center;margin-bottom:24px}
+.nine-theme .nine-gallery-heading>span{font-size:10px;color:#e2b55e;letter-spacing:.17em;font-weight:900}
+.nine-theme .nine-gallery-heading h2{font-family:'Noto Serif Thai',Tahoma,serif;color:#ffe4a4;font-size:clamp(22px,2.3vw,31px);margin:7px 0 4px}
+.nine-theme .nine-gallery-heading p{font-size:12px;color:#e4c4a8;margin:0}
+.nine-theme .nine-gallery-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.nine-theme .nine-deity-card{background:linear-gradient(170deg,#740914,#300306);border:1px solid #bb8230;border-radius:12px;padding:9px;overflow:hidden;box-shadow:0 10px 22px #17000360;transition:transform .25s ease,box-shadow .25s ease}
+.nine-theme .nine-deity-card:hover{transform:translateY(-4px);box-shadow:0 17px 28px #1800049e}
+.nine-theme .nine-deity-card img{width:100%;height:clamp(110px,11vw,165px);display:block;object-fit:cover;border-radius:7px}
+.nine-theme .nine-deity-card span{display:block;text-align:center;font-weight:850;color:#ffdf9f;font-size:13px;padding:11px 3px 4px}
+.nine-theme .stat-card{background:linear-gradient(160deg,#fffaf0,#f1dfbf);border:1px solid #c99b4a;border-top:4px solid #a60b19;border-radius:12px;box-shadow:0 8px 22px #22000344}
+.nine-theme .stat-top{color:#8e5931}.nine-theme .stat-value{color:#790711}.nine-theme .stat-note{color:#775959}
+.nine-theme .panel{background:linear-gradient(140deg,#fffaf1,#f5e8d1);border-color:#d6b47c;box-shadow:0 10px 30px #25000430}
+.nine-theme .quick-search{background:linear-gradient(135deg,#fff9ea,#f1debc)}
+.nine-theme .system-panel{background:linear-gradient(130deg,#fff7e8,#f6e9d1)}
+.nine-theme .panel-head h3{color:#5c1117}.nine-theme .panel-head p{color:#86656a}
+.nine-theme .button-dark,.nine-theme .number-card button,.nine-theme .ni-action.ni-primary{background:linear-gradient(120deg,#990a15,#63030a);border:1px solid #b58135;color:#ffefcc;border-radius:9px}
+.nine-theme .button-dark:hover,.nine-theme .number-card button:hover{background:linear-gradient(120deg,#bf161e,#830713)}
+.nine-theme .button-outline{background:#fff8e8;border-color:#c79f5d;color:#74151a}
+.nine-theme .control{background:#fffcf5;border:1px solid #cfa96b;color:#63131b;font-size:13px;min-height:46px}
+.nine-theme .control:focus{border-color:#a47128;box-shadow:0 0 0 3px #cda04530}
+.nine-theme .field>span{color:#80503e}
+.nine-theme .ni-inventory{background:linear-gradient(140deg,#3b0408,#5f0811);border:1px solid #c69c48;box-shadow:0 15px 35px #13000378}
+.nine-theme .ni-kicker{color:#bd8b3c}
+.nine-theme .ni-inventory .ni-kicker{color:#e0b95a}
+.nine-theme .ni-inventory-content{background:#fff7e8;border:1px solid #dec396;border-radius:13px;padding:21px}
+/* Inner explorer and analysis pages use calm ivory surfaces for legibility */
+.nine-theme .search-panel{border:1px solid #d5a957;background:#fff8e8;box-shadow:0 15px 33px #1b00065b}
+.nine-theme .digit-search,.nine-theme .advanced-filters>summary,.nine-theme .filter-actions,.nine-theme .digit-picker{background:#fff8eb}
+.nine-theme .filter-section-two{background:#fff7e8}.nine-theme .filter-section-title h3{color:#73131b}
+.nine-theme .round-number{background:#850b13;color:#ffdb91;border-color:#b78641}
+.nine-theme .digit-key{background:#fffcf4;border-color:#d6bb90;color:#703420}
+.nine-theme .digit-key.selected{background:#a10b19;border-color:#85080f;color:#fff2ca}
+.nine-theme .digit-key.excluded.selected{background:#413139;border-color:#413139;color:#fff}
+.nine-theme .position-slot{border-color:#cdac75}
+.nine-theme .table-toolbar h3,.nine-theme .table-toolbar p,.nine-theme .table-legend{color:#ffe6b7}
+.nine-theme .table-toolbar h3 span{color:#4f0b15;background:#ffe5a3}
+.nine-theme .number-card{background:linear-gradient(175deg,#fffdf5,#f6e8d0);border:1px solid #cfaa6b;box-shadow:0 7px 22px #2100034d;border-radius:13px}
+.nine-theme .number-card-top{border-bottom:1px solid #edd8b3;padding-bottom:10px}
+.nine-theme .number-card-number{font-size:clamp(23px,2.2vw,30px);color:#750d14}
+.nine-theme .number-card-fit{background:#fff3d9;border-color:#e0c08b}
+.nine-theme .number-card-fit strong,.nine-theme .number-card-price{color:#800910}
+.nine-theme .number-card-status{background:#f4e5cd;color:#68331d}
+.nine-theme .number-card button{min-height:38px}
+.nine-theme .empty-results{background:#fff6e5;color:#703b37;border-color:#d9b36d}
+.nine-theme .pagination,.nine-theme .pagination-buttons span{color:#ffdb93}
+.nine-theme .analyzer-input{background:linear-gradient(150deg,#fff9ed,#f2debb)}
+.nine-theme .analysis-placeholder{border-color:#bd873c;background:linear-gradient(130deg,#4f060b,#270206);color:#ffdfad}
+.nine-theme .analysis-placeholder p,.nine-theme .analysis-placeholder h3{color:#ffdbab}
+.nine-theme .placeholder-art{color:#e3b454}
+.nine-theme .notice-box{background:#ffefcf;border-color:#bc995a;color:#6a2325}
+.nine-theme .table-wrap,.nine-theme .rule-card,.nine-theme .csv-guide{background:#fff8ea;border-color:#d4b57d}
+.nine-theme .career-table-wrap table th{background:#6e0910;color:#ffdf9a}
+.nine-theme .rule-card h4,.nine-theme .rule-grid .rule-pair{color:#7b1219}
+.nine-theme .rule-card .rule-pair{background:#fff0c8;border-color:#d5aa59}
+.nine-theme .bottom-help{background:#ffedd2;color:#73393c;border-color:#cfb184}
+.nine-theme .site-footer{border-top:1px solid #d0a248;background:transparent;color:#e1c59d;padding:21px 0}.nine-theme .site-footer>*{color:#e1c59d}
+/* The richer brand style extends to explainable analysis, charts and image editor */
+.nine-theme .ni-report-hero{background:#fff6e6;border-color:#c79c47;box-shadow:0 16px 35px #22000455}
+.nine-theme .ni-report-headline{background:linear-gradient(135deg,#fff8e8,#f2ddbb)}
+.nine-theme .ni-report-art{background:#380209}
+.nine-theme .ni-report-art img{filter:none!important;object-position:50% 36%}
+.nine-theme .ni-big-number{color:#750d19}
+.nine-theme .ni-report-intro h2{color:#770714}
+.nine-theme .ni-report-card,.nine-theme .ni-advice{background:#fff6e7;border:1px solid #d2a764}
+.nine-theme .ni-card-heading h3{color:#710b13}
+.nine-theme .ni-mini-attr,.nine-theme .ni-advice-grid article{background:#fffaed;border-color:#e3c790}
+.nine-theme .ni-career-row .ni-bar-track{background:#ead8b7}
+.nine-theme .ni-bar-track span{background:linear-gradient(90deg,#880a15,#c01818,#dfb453)}
+.nine-theme .ni-place{background:#f9e5b5;color:#6a0a12}
+.nine-theme .ni-image-editor{background:#210002c7}
+.nine-theme .ni-edit-dialog{background:#fff7e9;border-color:#cf9a42}
+.nine-theme .ni-edit-dialog input[type=range]{accent-color:#b00b1b}
+.nine-theme .ni-art-toolbar button{color:#630c0d;border-color:#d4a04c}
+.nine-theme .ni-stock-donut{filter:drop-shadow(0 5px 10px #a72b1d24)}
+/* Avoid previous blur regression entirely; reduced motion remains respected. */
+.nine-theme .hero-main h2,.nine-theme .hero-main p,.nine-theme .hero-primary-actions,.nine-theme .hero-small-note,.nine-theme .page-heading,.nine-theme .nine-brand-banner,.nine-theme .nine-gallery{filter:none!important}
+.nine-theme .view .panel,.nine-theme .view .service-card,.nine-theme .view .stat-card,.nine-theme .view .search-panel,.nine-theme .view .number-card{filter:none!important;opacity:1!important}
+@media(max-width:1250px){
+ .nine-theme .sidebar{padding:0 22px}.nine-theme .brand{margin-right:7px}.nine-theme .nine-nav-logo{width:148px}.nine-theme .nav-item{padding:10px;font-size:11px}
+ .nine-theme .topbar{padding:0 23px}.nine-theme .celestial-hero{grid-template-columns:1fr .89fr}
+}
+@media(max-width:1000px){
+ .nine-theme .sidebar{position:fixed;left:0;top:0;bottom:0;height:100vh;width:268px;padding:22px 17px;background:#350208;align-items:stretch;transform:translateX(-100%);transition:transform .25s ease;box-shadow:12px 0 40px #0005;border-right:1px solid #c39249;border-bottom:none}
+ .nine-theme .sidebar.open{transform:translateX(0)}
+ .nine-theme .brand{margin:0 0 24px;display:flex;justify-content:center}.nine-theme .nine-nav-logo{width:204px;height:90px}
+ .nine-theme .navigation{display:flex;flex-direction:column;align-items:stretch}.nine-theme .nav-item{width:100%;font-size:14px;justify-content:start}
+ .nine-theme .topbar{height:53px;gap:13px}.nine-theme .mobile-menu{color:#ffe4a1;background:#7a1117;border:1px solid #bb8337;border-radius:7px;padding:4px 10px}
+ .nine-theme .content{padding:22px 17px}.nine-theme .nine-brand-banner{height:230px}
+ .nine-theme .celestial-hero{grid-template-columns:1fr 1fr}
+ .nine-theme .hero-main{min-height:auto;padding:36px 28px}
+ .nine-theme .hero-main h2{font-size:39px}.nine-theme .hero-widget{padding:28px 23px}
+ .nine-theme .celestial-categories{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
+ .nine-theme .celestial-announcement{height:auto;min-height:31px;gap:8px;padding:4px 9px;text-align:center}.nine-theme .ann-small{font-size:9px}.nine-theme .celestial-announcement strong{font-size:14px}
+ .nine-theme .topbar{padding:0 13px;min-width:0}.nine-theme .breadcrumb{font-size:10px;gap:7px}.nine-theme .breadcrumb>span:first-child{font-size:9px}
+ .nine-theme .status-chip{display:none}.nine-theme .topbar .button{font-size:11px;padding:8px;min-height:35px}
+ .nine-theme .nine-brand-banner{height:174px;border-radius:15px 15px 0 0}.nine-theme .nine-brand-banner>img{object-fit:cover;object-position:50% center}
+ .nine-theme .nine-brand-shade{padding:14px 12px 9px;display:block}.nine-theme .nine-brand-shade span{display:none}.nine-theme .nine-brand-shade strong{font-size:11px}
+ .nine-theme .celestial-hero{display:block;min-height:0}.nine-theme .hero-main{padding:32px 25px 34px}.nine-theme .celestial-medallion{width:112px;height:112px;flex-basis:112px;margin:9px 0 13px}
+ .nine-theme .hero-main h2{font-size:clamp(33px,8vw,45px)}.nine-theme .hero-main p{font-size:13px}
+ .nine-theme .hero-widget{border-left:0;border-top:3px solid #caa153;padding:30px 28px}
+ .nine-theme .celestial-categories{grid-template-columns:1fr 1fr}.nine-theme .celestial-categories button{padding:16px 10px;gap:7px}.nine-theme .category-symbol{width:29px;flex-basis:29px}.nine-theme .category-symbol img{width:28px;height:28px}.nine-theme .celestial-categories strong{font-size:11px}.nine-theme .celestial-categories small{font-size:10px}
+ .nine-theme .nine-gallery{padding:24px 14px 20px}.nine-theme .nine-gallery-grid{grid-template-columns:repeat(2,1fr);gap:10px}.nine-theme .nine-deity-card img{height:140px}
+ .nine-theme .service-grid{grid-template-columns:1fr}.nine-theme .service-card{min-height:210px}
+ .nine-theme .page-heading h1{font-size:31px}.nine-theme .nine-page-badge{width:46px;height:46px}
+ .nine-theme .ni-inventory-content{padding:16px 12px}.nine-theme .ni-inventory-header h2{color:#ffe6b0}
+ .nine-theme .number-card-number{font-size:27px}.nine-theme .site-footer{display:flex;flex-direction:column;gap:8px;text-align:center}
+}
+@media(max-width:430px){
+ .nine-theme .hero-primary-actions{flex-direction:column;align-items:stretch;width:100%}.nine-theme .hero-primary-actions .button{width:100%;justify-content:center}
+ .nine-theme .hero-widget{padding:23px 20px}.nine-theme .ni-hero-art{width:198px;height:148px}
+ .nine-theme .nine-deity-card img{height:120px}
+ .nine-theme .celestial-categories button{min-height:86px}.nine-theme .nine-brand-banner{height:150px}
+}
+@media(prefers-reduced-motion:reduce){.nine-theme .celestial-medallion,.nine-theme .nine-deity-card,.nine-theme .nine-brand-banner,.nine-theme .service-card{animation:none!important;transition:none!important}}
+/* Brand contrast QA: report hero has light lettering, so it must stay wine-dark. */
+.nine-theme .ni-report-intro h2{color:#ffe3a0!important;text-shadow:0 2px 12px #1b0007}
+.nine-theme .ni-report-intro p{color:#ebd2b3!important}
+.nine-theme .ni-report-intro .ni-kicker{color:#ebbd64}
+.nine-theme .ni-report-headline{background:radial-gradient(circle at 15% 12%,#870e19,#56050e 58%,#2c0308 100%)!important;color:#ffedc8}
+.nine-theme .ni-report-headline .ni-big-number{color:#ffe3a0!important}
+.nine-theme .ni-report-headline .ni-score-line>strong,.nine-theme .ni-report-headline h3 em{color:#ffe3a0!important}
+.nine-theme .ni-report-headline .ni-score-line>span,.nine-theme .ni-report-headline h3,.nine-theme .ni-report-headline p{color:#f8e6cc!important}
+.nine-theme .ni-report-headline .ni-job-pill{color:#f9dea7;background:#eab96a16;border:1px solid #d7a7606e}
+.nine-theme .ni-report-headline .ni-summary-tags span{color:#ffe8c0}
+.nine-theme .workflow-grid{margin-top:18px}
+.nine-theme .workflow-item{border-top:2px solid #bb8b46;background:#44040a64;padding:20px 15px;border-radius:0 0 10px 10px}
+.nine-theme .workflow-item h4{color:#ffe3ae!important;font-size:16px}
+.nine-theme .workflow-item p{color:#e5c3a2!important;font-size:12px;line-height:1.7}
+.nine-theme .workflow-num{color:#d9a654!important}
+.nine-theme .workflow-item .section-kicker{color:#e9b65f}
+
+/* Compact offline notice; keep trial limitations readable without overwhelming the brand banner. */
+.nine-theme #offline-message{background:linear-gradient(90deg,#6d0912,#4a040a)!important;border:1px solid #af7b38!important;color:#ffe6b2!important;font-size:11px;line-height:1.6;padding:9px 14px!important;margin-bottom:12px!important;border-radius:8px}
+.nine-theme #offline-message code{color:#fff5dd;background:#10000370;padding:1px 5px;border-radius:4px}

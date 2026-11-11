@@ -1,0 +1,73 @@
+/* 9มงคล — Sacred Luxury Motion System v0.7
+   Decorative layer only; no filters or transforms on readable text. */
+:root{--nm-glow:#ffdb8a;--nm-amber:#e2aa4d;--nm-ember:#eec16e}
+.nine-theme .nine-brand-banner{isolation:isolate}
+.nine-theme .nine-brand-banner::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(106deg,transparent 25%,rgba(255,237,174,.10) 46%,rgba(255,236,172,.18) 49%,transparent 55%);transform:translateX(-130%);animation:nm-banner-sheen 13s cubic-bezier(.2,.75,.4,1) infinite}
+.nine-theme .nine-brand-banner::after{content:"";position:absolute;z-index:3;pointer-events:none;inset:0;border-radius:20px;border:1px solid rgba(255,222,158,.5);box-shadow:inset 0 0 26px rgba(231,183,73,.12);animation:nm-border-breath 7s ease-in-out infinite}
+.nine-theme .nine-brand-shade{z-index:4}
+.nine-theme .nine-brand-banner>img{transform:none!important;filter:none!important}
+/* Gold particles belong to decoration, never to the content or text layer. */
+.nine-theme .nm-dust{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1}
+.nine-theme .nm-dust>i{position:absolute;width:var(--s,3px);height:var(--s,3px);border-radius:50%;background:#ffda8c;box-shadow:0 0 9px #ffd777b0,0 0 2px #fff8cc;left:var(--x);top:var(--y);opacity:0;animation:nm-dust-float var(--d,9s) linear infinite;animation-delay:var(--delay)}
+.nine-theme .hero-main,.nine-theme .hero-widget{isolation:isolate}
+.nine-theme .hero-main>.nm-dust{z-index:1}
+.nine-theme .hero-widget>.nm-dust{z-index:0}
+.nine-theme .hero-main>:not(.nm-dust),.nine-theme .hero-widget>:not(.nm-dust){position:relative;z-index:2}
+/* Ring ornament: slowly turning border; the brand asset itself stays perfectly sharp. */
+.nine-theme .celestial-medallion{position:relative;isolation:isolate}
+.nine-theme .celestial-medallion::before{content:"";display:block;position:absolute;inset:-8px;border:1px solid #e3b969a6;border-radius:50%;background:repeating-conic-gradient(from 0deg,rgba(255,227,170,.62) 0deg 1deg,transparent 2deg 25deg);mask:radial-gradient(circle,transparent 65%,#000 67%,#000 71%,transparent 73%);-webkit-mask:radial-gradient(circle,transparent 65%,#000 67%,#000 71%,transparent 73%);animation:nm-orbit 40s linear infinite;pointer-events:none}
+.nine-theme .celestial-medallion::after{content:"✦";display:block;position:absolute;top:0;right:2px;font-size:19px;color:#ffeaad;text-shadow:0 0 13px #ffe1a8,0 0 25px #fff4c078;animation:nm-star 5.5s ease-in-out infinite;pointer-events:none}
+.nine-theme .nine-hero-badge{filter:drop-shadow(0 0 18px #f2c36185)!important}
+/* Premium call to action: periodic glint and subtle emphasis. */
+.nine-theme .hero-primary-actions .button-dark,.nine-theme .hero-inline-form button,.nine-theme #quick-search,.nine-theme #filter-apply,.nine-theme #analyzer-form button[type=submit]{position:relative;isolation:isolate;overflow:hidden;box-shadow:0 7px 21px #2e030a66,0 0 0 1px #f4d08744}
+.nine-theme .hero-primary-actions .button-dark::after,.nine-theme .hero-inline-form button::after,.nine-theme #quick-search::after,.nine-theme #filter-apply::after,.nine-theme #analyzer-form button[type=submit]::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(105deg,transparent 31%,rgba(255,247,209,.54) 48%,transparent 63%);transform:translateX(-155%) skewX(-12deg);animation:nm-button-sheen 7.5s ease-in-out infinite}
+.nine-theme .hero-primary-actions .button:focus-visible,.nine-theme .hero-inline-form button:focus-visible,.nine-theme .digit-key:focus-visible,.nine-theme .nm-motion-toggle:focus-visible{outline:3px solid #fce39b;outline-offset:3px}
+.nine-theme .nine-nav-logo{animation:nm-logo-glow 8s ease-in-out infinite;transform:none!important}
+.nine-theme .nine-deity-card,.nine-theme .service-card,.nine-theme .number-card{position:relative;isolation:isolate;overflow:hidden}
+.nine-theme .nine-deity-card::after,.nine-theme .service-card::after,.nine-theme .number-card::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;border-radius:inherit;box-shadow:inset 0 0 0 1px #f2c47c24;opacity:.3;transition:opacity .35s ease,box-shadow .35s ease}
+.nine-theme .nine-deity-card:hover::after,.nine-theme .service-card:hover::after,.nine-theme .number-card:hover::after{opacity:1;box-shadow:inset 0 0 0 1px #ffdb8799,inset 0 0 28px #ffdb871b}
+.nine-theme .nine-deity-card img{transition:filter .5s ease,scale .65s cubic-bezier(.22,1,.36,1);filter:none;scale:1}
+.nine-theme .nine-deity-card:hover img{scale:1.035;filter:saturate(1.08)}
+/* Non-destructive reveal. Content remains visible even if IntersectionObserver fails. */
+.nine-theme .nm-reveal{opacity:1!important;filter:none!important}
+.nine-theme .nm-reveal.nm-visible{animation:nm-soft-rise .65s cubic-bezier(.2,.8,.2,1) both}
+.nine-theme .nm-stagger{animation:nm-soft-rise .58s cubic-bezier(.2,.8,.2,1) both;animation-delay:var(--nm-delay,0ms)}
+.nine-theme .nm-result-arrive{animation:nm-soft-rise .48s cubic-bezier(.2,.8,.2,1) both;animation-delay:var(--nm-delay,0ms)}
+/* On-click feedback & result story. */
+.nine-theme .digit-key.selected{animation:nm-chip-pop .32s cubic-bezier(.2,.9,.4,1)}
+.nine-theme .ni-report-hero{position:relative;overflow:hidden}
+.nine-theme .ni-report-hero::after{content:"";position:absolute;inset:0;pointer-events:none;border:1px solid #f3d99566;border-radius:inherit;box-shadow:inset 0 0 22px #e9b86b1c;z-index:1}
+.nine-theme .ni-report.nm-report-ready .ni-report-headline{animation:nm-report-reveal .6s ease-out both}
+.nine-theme .ni-report.nm-report-ready .ni-report-art{animation:nm-soft-rise .65s ease-out .13s both}
+.nine-theme .ni-report.nm-report-ready .ni-career-row .ni-bar-track>span,.nine-theme .ni-report.nm-report-ready .ni-source-bar i>span{transform-origin:left center;animation:nm-bar-fill .8s cubic-bezier(.21,.87,.36,1) both;animation-delay:var(--nm-delay,150ms)}
+.nine-theme .ni-report.nm-report-ready .ni-radar polygon:last-of-type{transform-origin:180px 163px;animation:nm-radar-reveal .75s cubic-bezier(.18,.9,.24,1.0) .15s both}
+.nine-theme .ni-report.nm-report-ready .ni-radar circle{animation:nm-star .8s ease-out .6s both}
+.nine-theme .ni-report.nm-report-ready .ni-report-card,.nine-theme .ni-report.nm-report-ready .ni-advice{animation:nm-soft-rise .7s cubic-bezier(.2,.8,.2,1) both;animation-delay:var(--nm-delay,110ms)}
+/* User control: compact, real opt-out from decorative motion. */
+.nine-theme .nm-motion-toggle{white-space:nowrap;border:1px solid #b98c4f;background:#3f050c;color:#f8dba3;min-height:34px;border-radius:8px;padding:7px 11px;font-size:11px;font-weight:750;cursor:pointer;display:inline-flex;gap:7px;align-items:center;justify-content:center}
+.nine-theme .nm-motion-toggle:hover{background:#6b0b16;border-color:#efd08b;color:#fff5d5}
+.nine-theme .nm-motion-toggle[aria-pressed=true]{background:#ffe7b2;color:#511010}
+.nine-theme .nm-motion-toggle .nm-toggle-icon{font-size:14px;line-height:1}
+/* When paused/reduced, every animation must stop without hiding text. */
+body.nm-motion-off *,body.nm-motion-off *::before,body.nm-motion-off *::after{animation:none!important;transition-duration:0.01ms!important}
+body.nm-paused *,body.nm-paused *::before,body.nm-paused *::after{animation-play-state:paused!important}
+body.nm-motion-off .nm-dust,body.nm-motion-off .nm-dust>i{display:none!important}
+body.nm-motion-off .nm-reveal,body.nm-motion-off .nm-visible,body.nm-motion-off .nm-stagger,body.nm-motion-off .nm-result-arrive,body.nm-motion-off .nm-report-ready *{animation:none!important;transform:none;opacity:1!important;filter:none!important}
+@keyframes nm-banner-sheen{0%,19%{transform:translateX(-130%)}41%,100%{transform:translateX(165%)}}
+@keyframes nm-border-breath{0%,100%{opacity:.35}50%{opacity:.85}}
+@keyframes nm-orbit{to{transform:rotate(360deg)}}
+@keyframes nm-star{0%,100%{opacity:.65;scale:.9}50%{opacity:1;scale:1.12}}
+@keyframes nm-dust-float{0%{transform:translate3d(0,14px,0) scale(.5);opacity:0}23%{opacity:.55}75%{opacity:.35}100%{transform:translate3d(8px,-40px,0) scale(.9);opacity:0}}
+@keyframes nm-button-sheen{0%,60%{transform:translateX(-155%) skewX(-12deg)}82%,100%{transform:translateX(155%) skewX(-12deg)}}
+@keyframes nm-logo-glow{0%,100%{filter:drop-shadow(0 1px 9px #e8bb6746)}50%{filter:drop-shadow(0 0 14px #f7d78665)}}
+@keyframes nm-soft-rise{from{opacity:.8;translate:0 12px}to{opacity:1;translate:0 0}}
+@keyframes nm-chip-pop{0%{box-shadow:0 0 0 #ffd57900}50%{box-shadow:0 0 0 5px #e0b15d50}100%{box-shadow:0 0 0 #ffd57900}}
+@keyframes nm-bar-fill{from{scale:0 1}to{scale:1 1}}
+@keyframes nm-radar-reveal{from{scale:.6;opacity:.18}to{scale:1;opacity:1}}
+@keyframes nm-report-reveal{from{opacity:.85}to{opacity:1}}
+@media(max-width:760px){.nine-theme .nm-dust>i:nth-child(n+8){display:none}.nine-theme .nm-motion-toggle{font-size:0;min-width:36px;padding:6px}.nine-theme .nm-motion-toggle .nm-toggle-icon{font-size:17px}}
+@media(prefers-reduced-motion:reduce){.nine-theme *, .nine-theme *::before,.nine-theme *::after{animation:none!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}.nine-theme .nm-dust{display:none!important}.nine-theme .nm-reveal,.nine-theme .nm-stagger,.nine-theme .nm-result-arrive{opacity:1!important;transform:none!important;filter:none!important}}
+
+/* Explicitly override the old hero entrance animation's opacity:0 in both off modes. */
+body.nm-motion-off .hero-main>*:not(.nm-dust):not(.cosmic-sparkles){opacity:1!important;transform:none!important}
+@media(prefers-reduced-motion:reduce){.nine-theme .hero-main>*:not(.nm-dust):not(.cosmic-sparkles){opacity:1!important;transform:none!important}}

@@ -1,0 +1,16 @@
+/* 9MONGKOL premium interactive components */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@500;600;700&family=Noto+Sans+Thai:wght@400;500;600&display=swap');
+:root {--red:#7A0008;--wine:#310305;--gold:#D4AF37;--cream:#F8F1E3;}
+.nine-hero {position:relative;isolation:isolate;color:var(--cream);background:linear-gradient(125deg,#220305,#67040e 55%,#250308);overflow:hidden;}
+.nine-hero::before {content:'';position:absolute;inset:-30%;z-index:-1;pointer-events:none;background:radial-gradient(circle at 60% 38%,#eaba4226,transparent 36%);animation:nine-aura 12s ease-in-out infinite alternate;}
+.nine-hero .nine-logo{filter:drop-shadow(0 10px 30px #0d0008a0);animation:nine-float 5s ease-in-out infinite;}
+.nine-gold-button{border:1px solid #fff0b7;color:#3c0705;background:linear-gradient(120deg,#ae7924,#ffe7a5 45%,#d29a31 85%);box-shadow:0 8px 32px #d4af373b,inset 0 1px #fff6cf;transition:transform .25s,box-shadow .25s; padding:.85rem 1.6rem;border-radius:50px;font:600 1rem 'Noto Sans Thai',sans-serif;cursor:pointer;}
+.nine-gold-button:hover{transform:translateY(-3px);box-shadow:0 13px 36px #d4af376b,inset 0 1px #fff6cf;}
+.nine-dark-button{border:1px solid #c99c46;color:#ffe7a5;background:linear-gradient(130deg,#910915,#3b0207);box-shadow:inset 0 1px #e8b66070; padding:.85rem 1.6rem;border-radius:50px;font:600 1rem 'Noto Sans Thai',sans-serif;cursor:pointer;transition:background .25s,transform .25s;}
+.nine-dark-button:hover{transform:translateY(-3px);background:#940915;}
+.nine-gold-number{background:linear-gradient(125deg,#ae7422,#fff1b6,#cf9631);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 4px 8px #8c310633);}
+.nine-sparkle{animation:nine-shimmer 3s ease-in-out infinite alternate;transform-origin:center;}
+@keyframes nine-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes nine-aura{0%{transform:scale(.95) rotate(-5deg);opacity:.62}100%{transform:scale(1.06) rotate(5deg);opacity:1}}
+@keyframes nine-shimmer{0%{opacity:.45;transform:scale(.87)}100%{opacity:1;transform:scale(1.09)}}
+@media (prefers-reduced-motion:reduce){.nine-hero::before,.nine-hero .nine-logo,.nine-sparkle{animation:none}.nine-gold-button,.nine-dark-button{transition:none}}
