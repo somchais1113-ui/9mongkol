@@ -167,7 +167,7 @@ function buildPositionInputs(){
  $('clear-position').addEventListener('click',()=>{target.querySelectorAll('input:not(:disabled)').forEach(n=>n.value='');state.page=1;loadResults()});
 }
 function bindUI(){
- setupRevealObserver();applyRevealTargets(document);setupHeroParallax();window.NIInsights?.bindImageEditor();
+ setupRevealObserver();applyRevealTargets(document);window.NIInsights?.bindImageEditor();
  document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.view)));
  document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.jump)));
  $('mobile-menu').addEventListener('click',()=> $('sidebar').classList.toggle('open'));

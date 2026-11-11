@@ -1,0 +1,32 @@
+[
+  {
+    "logoWidth": 1024,
+    "heroLogoWidth": 1024,
+    "shade": "rgb(56, 5, 10)",
+    "documentWidth": 1440,
+    "viewport": 1440,
+    "counter": "395",
+    "hover": {
+      "deltaY": 0.0,
+      "deltaHeight": 0.0,
+      "transform": "none"
+    },
+    "reportVisible": true,
+    "errors": []
+  },
+  {
+    "logoWidth": 1024,
+    "heroLogoWidth": 1024,
+    "shade": "rgb(56, 5, 10)",
+    "documentWidth": 390,
+    "viewport": 390,
+    "counter": "395",
+    "hover": {
+      "deltaY": 0.0,
+      "deltaHeight": 0.0,
+      "transform": "none"
+    },
+    "reportVisible": true,
+    "errors": []
+  }
+]
