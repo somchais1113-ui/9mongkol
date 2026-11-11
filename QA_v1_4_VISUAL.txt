@@ -1,0 +1,15 @@
+9MONGKOL v1.4 Visual/Layout QA
+=======================================
+Preview built using Chromium (static HTML/CSS/JS with the project's offline data bridge).
+Viewport 1440px: 2 columns, 20 number cards, no page horizontal overflow, all digits visible.
+Viewport 1200px: 2 columns, no page horizontal overflow.
+Viewport 1080px: 2 columns, no page horizontal overflow.
+Viewport 1024px: 2 columns, no page horizontal overflow.
+Viewport 900px: 2 columns, no page horizontal overflow.
+Viewport 819px: 1 column.
+Viewport 768px: 1 column.
+Viewport 390px: 1 column, no page horizontal overflow.
+Viewport 320px: 1 column, no page horizontal overflow.
+Default grid view displayed on init; the user can toggle to Large Card and back to Two Columns.
+Browser JavaScript exceptions in tested flows: 0.
+Automated regression tests: 38 passed.

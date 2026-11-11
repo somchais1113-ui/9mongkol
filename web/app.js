@@ -189,9 +189,9 @@ function bindUI(){
  function setCardView(mode){$('result-cards').classList.toggle('is-large',mode==='large');gridBtn.classList.toggle('is-active',mode==='grid');largeBtn.classList.toggle('is-active',mode==='large');gridBtn.setAttribute('aria-pressed',String(mode==='grid'));largeBtn.setAttribute('aria-pressed',String(mode==='large'))}
  gridBtn.addEventListener('click',()=>setCardView('grid'));
  largeBtn.addEventListener('click',()=>setCardView('large'));
- // Design Lock: use the original-reference large card on initial search.
- // Visitors can switch to 2-column catalog mode for fast scanning.
- setCardView('large');
+ // v1.4: show the two-column catalog by default for fast scanning.
+ // The full-size reference card is still available as an optional view.
+ setCardView('grid');
 
  renderDigitKeypads();buildPositionInputs();
  $('hero-analyze-form').addEventListener('submit',e=>{e.preventDefault();const number=$('hero-analyze-number').value;$('analyze-number').value=number;setView('analyze');runAnalyze(number,$('analyze-career').value)});

@@ -1,0 +1,182 @@
+/* 9MONGKOL v1.4 — compact 2-column search catalogue (default view).
+   Keeps the v1.3 decorative art direction, but constrains type and ornaments
+   to each column. The separate large-card view remains available on demand. */
+
+/* Desktop catalogue: 2 results per row; fixed visual hierarchy. */
+@media (min-width: 1081px) {
+  .nine-theme #view-explorer .nmk-results:not(.is-large) {
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:24px!important;
+    align-items:stretch;
+  }
+}
+@media (min-width: 820px) and (max-width: 1080px) {
+  .nine-theme #view-explorer .nmk-results:not(.is-large) {
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:18px!important;
+  }
+}
+@media (max-width: 819px) {
+  .nine-theme #view-explorer .nmk-results:not(.is-large) {
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:18px!important;
+  }
+}
+/* Only catalogue cards, not optional full-width reference cards. */
+.nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-result-slot {
+  container-type:inline-size;
+  width:100%!important;
+  max-width:none!important;
+  min-width:0!important;
+  margin:0!important;
+}
+.nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card {
+  box-sizing:border-box;
+  padding:clamp(17px,3.8cqw,27px)!important;
+  border-radius:23px!important;
+  min-width:0;
+  height:100%;
+}
+.nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__top {
+  padding-bottom:13px;gap:9px;
+}
+.nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__id {
+  font-size:clamp(15px,3.2cqw,19px);line-height:1.35;letter-spacing:.065em;
+}
+.nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__status {
+  font-size:clamp(11px,2.65cqw,14px);padding:7px 9px;flex-shrink:1;max-width:52%;
+}
+.nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__phone-wrap {
+  padding:clamp(18px,4cqw,27px) 0 12px;min-width:0;overflow:hidden;
+}
+.nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__phone {
+  font-size:clamp(30px,9.15cqw,59px)!important;
+  line-height:1.19;letter-spacing:-.018em;
+  max-width:100%;width:100%;
+  transform:none!important;
+  justify-content:center;
+  white-space:nowrap;
+}
+.nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__phone-dash {
+  margin:0 .025em;
+}
+.nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__fit {
+  padding:9px 0 17px;
+  font-size:clamp(14px,2.9cqw,17px);
+  gap:7px;line-height:1.45;
+}
+.nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__scorebar {
+  min-height:100px!important;
+  display:grid;
+  grid-template-columns:clamp(33px,8cqw,45px) minmax(0,1fr) auto!important;
+  gap:clamp(5px,1.3cqw,10px)!important;
+  padding:12px clamp(10px,2.4cqw,16px)!important;
+  border-radius:18px;
+}
+.nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__target {
+  width:clamp(33px,8cqw,45px);height:52px;padding-right:6px;
+}
+.nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__score-caption {
+  min-width:0;
+}
+.nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__score-heading {
+  font-size:clamp(14px,3.05cqw,19px)!important;line-height:1.2;
+}
+.nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__score-sub {
+  font-size:clamp(12px,2.6cqw,15px)!important;
+}
+.nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__score-medallion {
+  grid-column:auto!important;
+  justify-content:flex-end!important;
+  min-width:0;
+  padding:0!important;
+}
+.nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__laurel {
+  width:clamp(11px,3.0cqw,19px)!important;
+  height:clamp(52px,12.1cqw,78px)!important;
+  flex-shrink:0;
+}
+.nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__score {
+  gap:3px!important;
+  align-items:baseline;
+}
+.nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__score-number {
+  font-size:clamp(42px,10.4cqw,63px)!important;
+  letter-spacing:-.055em;
+}
+.nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__score-denom {
+  font-size:clamp(13px,2.65cqw,17px)!important;
+  padding:6px 7px!important;
+  margin:0!important;
+  white-space:nowrap;
+}
+.nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__bottom {
+  padding:18px 0 2px!important;
+  display:flex!important;
+  gap:11px!important;
+  align-items:center!important;
+  flex-wrap:wrap;
+}
+.nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__price-group {
+  display:flex;flex-direction:column;align-items:flex-start;
+  gap:2px;flex:1 1 180px;min-width:0;
+}
+.nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__price {
+  font-size:clamp(33px,7.8cqw,48px)!important;
+  line-height:1.1;white-space:nowrap;
+}
+.nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__meta {
+  font-size:clamp(12px,2.65cqw,14px)!important;
+  line-height:1.5;padding:0;border:0;
+  overflow-wrap:anywhere;
+}
+.nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__cta {
+  min-height:47px!important;
+  width:auto!important;
+  align-self:center!important;
+  padding:10px 16px!important;
+  font-size:clamp(14px,2.95cqw,17px)!important;
+  border-radius:30px;
+  white-space:nowrap;
+}
+.nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__cta img {
+  width:18px!important;height:18px!important;
+}
+/* When cards are narrower (small laptops), let the bottom action use a full row,
+   but keep the two-column result grid itself. */
+@container (max-width: 460px) {
+  .nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__bottom {
+    align-items:stretch!important;
+  }
+  .nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__cta {
+    width:100%!important;justify-content:center;
+  }
+}
+/* On phones the readable single-column card still uses the same design. */
+@media (max-width:819px) {
+  .nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-result-slot {
+    max-width:650px!important;
+    margin:0 auto!important;
+  }
+}
+@media (max-width:819px) {
+  /* In stacked mobile cards, the price is content-height, not a 180px flex basis. */
+  .nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__bottom {
+    flex-direction:column!important;
+    align-items:stretch!important;
+    justify-content:flex-start;
+    gap:14px!important;
+  }
+  .nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__price-group {
+    flex:0 0 auto!important;
+    width:100%;
+  }
+  .nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__cta {
+    width:100%!important;
+  }
+}
+.nine-theme #view-explorer .nmk-results:not(.is-large) .nmk-card__meta {
+  flex:0 1 auto!important; /* prevent inherited 120px flex basis on phone */
+}
