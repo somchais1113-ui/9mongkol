@@ -1,4 +1,4 @@
-# FULL PACKAGE — 9 มงคล v0.7 (Sacred Luxury Motion Edition)
+# FULL PACKAGE — 9 มงคล v0.8 (Readability Edition)
 
 ## ไฟล์ในชุดส่งมอบ
 
@@ -28,3 +28,9 @@
 - `web/nine-motion.css` — Motion Layer แยกจากแบรนด์ CSS เดิม
 - `web/nine-motion.js` — Particle decorations, reveal, chart animations, effect toggle
 - `MOTION_GUIDE_TH.md` — คู่มือเปิด/ปิดและการแก้ Motion Tokens
+
+## v0.8 New Files
+- `web/nine-readable.css` — Typography overrides สำหรับความอ่านง่ายทั้ง Desktop/Mobile
+- `TYPOGRAPHY_GUIDE_TH.md` — คู่มือขนาดตัวอักษรและการปรับต่อ
+- `CHANGELOG_v0_8_TH.md` — สรุปสิ่งที่เปลี่ยนและผล QA
+- `scripts/qa_typography.py` — ทดสอบ browser layout/overflow (ต้องมี Playwright และ Chromium)

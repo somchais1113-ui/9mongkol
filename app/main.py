@@ -20,7 +20,7 @@ async def lifespan(app):
     config()
     yield
 
-app = FastAPI(title='9MONGKOL — Number Intelligence Engine', version='0.7.0', docs_url='/api/docs', lifespan=lifespan)
+app = FastAPI(title='9MONGKOL — Number Intelligence Engine', version='0.8.0', docs_url='/api/docs', lifespan=lifespan)
 app.mount('/assets', StaticFiles(directory=BASE/'web'), name='assets')
 
 @app.get('/')
@@ -29,7 +29,7 @@ def home():
 
 @app.get('/api/health')
 def health():
-    return {'ok':True,'version':'0.7.0','mode':'MVP (non-scientific interpretation)'}
+    return {'ok':True,'version':'0.8.0','mode':'MVP (non-scientific interpretation)'}
 
 @app.get('/api/meta')
 def meta():

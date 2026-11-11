@@ -40,6 +40,7 @@ for f in ('styles.css','storefront.css','celestial.css','insights.css','nine-mon
     html=html.replace('/assets/'+f+'?v=0.6.0','web/'+f+'?v=0.6.0')
 html=html.replace('/assets/nine-mongkol.css?v=0.7.0','web/nine-mongkol.css?v=0.7.0')
 html=html.replace('/assets/nine-motion.css?v=0.7.0','web/nine-motion.css?v=0.7.0')
+html=html.replace('/assets/nine-readable.css?v=0.8.0','web/nine-readable.css?v=0.8.0')
 html=html.replace('/assets/nine-motion.js?v=0.7.0','web/nine-motion.js?v=0.7.0')
 html=html.replace('/assets/assets/number-visual.svg','web/assets/number-visual.svg')
 html=html.replace('/assets/assets/9mongkol/','web/assets/9mongkol/')

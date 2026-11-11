@@ -1,0 +1,244 @@
+/* 9มงคล v0.8 — Readable Typography System
+   Accessibility-first Thai text. Intentionally loaded after all prior styles.
+   Reference targets: 16–18px reading text, >=14px secondary labels,
+   comfortable 1.55–1.8 line height, >=44px interactive controls.
+   Decorative glyphs and numbers retain their bespoke brand proportions.
+*/
+:root{
+  --nm-body:17px;
+  --nm-detail:16px;
+  --nm-secondary:15px;
+  --nm-label:14px;
+  --nm-headline:clamp(32px,3.05vw,45px);
+  --nm-section:clamp(26px,2.4vw,36px);
+  --nm-line:1.68;
+}
+html{font-size:16px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body.nine-theme{font-size:var(--nm-body);line-height:var(--nm-line);font-weight:400}
+.nine-theme p,.nine-theme li,.nine-theme td,.nine-theme th,.nine-theme small{line-height:1.65}
+.nine-theme h1,.nine-theme h2,.nine-theme h3,.nine-theme h4{line-height:1.35;overflow-wrap:break-word}
+.nine-theme input,.nine-theme select,.nine-theme textarea,.nine-theme button{font-size:16px;line-height:1.5}
+/* Header & navigation: compact enough for desktop, no microtype. */
+.nine-theme .celestial-announcement{min-height:41px;height:auto;padding:7px 14px;font-size:14px;letter-spacing:.025em;line-height:1.4}
+.nine-theme .celestial-announcement strong{font-size:18px}
+.nine-theme .celestial-announcement .ann-small{font-size:14px;line-height:1.45}
+.nine-theme .sidebar{height:96px;padding-left:max(15px,calc((100vw - 1390px)/2));padding-right:max(15px,calc((100vw - 1390px)/2))}
+.nine-theme .brand{margin-right:13px;min-width:158px}.nine-theme .nine-nav-logo{width:158px}
+.nine-theme .navigation{gap:2px}.nine-theme .nav-item{font-size:15px;font-weight:750;padding:12px 11px;line-height:1.45}
+.nine-theme .nav-item .nav-icon{font-size:20px;flex:0 0 22px;width:22px}
+.nine-theme .topbar{height:auto;min-height:58px;gap:14px;padding-top:7px;padding-bottom:7px}
+.nine-theme .breadcrumb,.nine-theme .breadcrumb strong,.nine-theme .breadcrumb>span:first-child,.nine-theme .status-chip{font-size:14px;line-height:1.5}
+.nine-theme .status-chip{letter-spacing:0}
+.nine-theme .topbar .button,.nine-theme .button-sm{font-size:15px;padding:10px 14px;min-height:44px}
+.nine-theme .nm-motion-toggle{font-size:14px;padding:9px 12px;min-height:44px}
+/* Hero/section hierarchy */
+.nine-theme .page-heading h1{font-size:var(--nm-headline);line-height:1.28}
+.nine-theme .page-heading p{font-size:17px;line-height:1.7;opacity:1;color:#ffeed3}
+.nine-theme .eyebrow,.nine-theme .section-kicker,.nine-theme .section-label,.nine-theme .ni-kicker{font-size:14px;letter-spacing:.08em;line-height:1.5}
+.nine-theme .version-pill{font-size:14px;line-height:1.4;white-space:normal}
+.nine-theme .nine-brand-shade strong{font-size:16px;line-height:1.45}
+.nine-theme .nine-brand-shade span{font-size:14px;letter-spacing:.07em}
+.nine-theme .celestial-kicker{font-size:14px;letter-spacing:.07em}
+.nine-theme .hero-main h2{font-size:clamp(38px,3.6vw,57px);line-height:1.32}
+.nine-theme .hero-main p{font-size:17px;line-height:1.77;max-width:610px}
+.nine-theme .hero-small-note{font-size:14px;line-height:1.65}
+.nine-theme .hero-primary-actions .button{font-size:16px;min-height:50px;padding:13px 18px;line-height:1.45}
+.nine-theme .hero-widget{padding:30px 30px 30px}
+.nine-theme .hero-widget h3{font-size:clamp(28px,2.4vw,36px);line-height:1.35}
+.nine-theme .hero-widget p{font-size:16px;line-height:1.72}
+.nine-theme .ornament-line,.nine-theme .hero-widget-foot{font-size:14px;letter-spacing:.03em;line-height:1.6}
+.nine-theme .hero-inline-form input{font-size:17px;min-height:56px}
+.nine-theme .hero-inline-form button{font-size:17px;min-height:52px}
+.nine-theme .ni-hero-art button{font-size:14px;padding:7px 13px;min-height:36px}
+.nine-theme .celestial-categories button{padding:19px 17px;min-height:88px;gap:12px}
+.nine-theme .celestial-categories strong{font-size:17px;line-height:1.45}
+.nine-theme .celestial-categories small{font-size:14px;line-height:1.48;color:#f1d9b9}
+.nine-theme .celestial-quote strong{font-size:21px;line-height:1.5}
+.nine-theme .celestial-quote small{font-size:14px;line-height:1.5;letter-spacing:.04em}
+.nine-theme .section-heading h2,.nine-theme .ni-inventory-header h2{font-size:var(--nm-section);line-height:1.35}
+.nine-theme .section-heading p,.nine-theme .ni-inventory-header p,.nine-theme .nine-gallery-heading p{font-size:16px;line-height:1.7}
+.nine-theme .nine-gallery-heading>span{font-size:14px}
+.nine-theme .nine-deity-card span{font-size:16px;line-height:1.45}
+.nine-theme .service-card{min-height:282px;gap:8px}
+.nine-theme .service-card strong{font-size:23px;line-height:1.4}
+.nine-theme .service-index,.nine-theme .service-link{font-size:15px;line-height:1.45}
+.nine-theme .service-card .service-text{font-size:17px;line-height:1.65;color:#f1d8ba}
+.nine-theme .service-card:nth-child(2) .service-text{color:#6a4239}
+/* Summary KPI + inventory analytics */
+.nine-theme .stat-card{min-height:155px}
+.nine-theme .stat-top,.nine-theme .stat-note{font-size:14px;line-height:1.55}
+.nine-theme .stat-value{font-size:clamp(34px,3vw,43px)}
+.nine-theme .panel{padding:26px}
+.nine-theme .panel h3,.nine-theme .panel-head h3{font-size:24px;line-height:1.36}
+.nine-theme .panel-head p,.nine-theme .workflow-item p{font-size:16px;line-height:1.7}
+.nine-theme .workflow-item h4{font-size:20px}
+.nine-theme .workflow-num{font-size:16px}
+.nine-theme .system-row,.nine-theme .system-row strong,.nine-theme .system-disclaimer,.nine-theme .sidebar-notice small{font-size:15px;line-height:1.65}
+.nine-theme .ni-stock-donut span,.nine-theme .ni-stock-kpi small,.nine-theme .ni-stock-summary p,.nine-theme .ni-source-bar>div,.nine-theme .ni-inventory-note{font-size:15px;line-height:1.58}
+/* Search & number cards */
+.nine-theme .filter-section-title h3,.nine-theme .table-toolbar h3{font-size:25px}
+.nine-theme .filter-section-title p,.nine-theme .table-toolbar p{font-size:16px;line-height:1.65}
+.nine-theme .field>span,.nine-theme .picker-heading label,.nine-theme .position-label strong{font-size:15px;font-weight:760;line-height:1.55}
+.nine-theme .control{font-size:16px;min-height:50px;padding:10px 13px}
+.nine-theme .digit-picker{padding:21px}
+.nine-theme .picker-heading small,.nine-theme .position-label small,.nine-theme .filter-helper,.nine-theme .paste-hint{font-size:14px;line-height:1.55}
+.nine-theme .digit-key{font-size:16px;min-height:44px;line-height:1.4}
+.nine-theme .advanced-filters summary,.nine-theme .advanced-filters>summary{font-size:16px;min-height:48px}
+.nine-theme .position-clear{font-size:15px;min-height:40px}
+.nine-theme .search-panel .button,.nine-theme .filter-actions .button{font-size:16px;min-height:48px}
+.nine-theme .number-card{padding:22px 21px;gap:14px}
+.nine-theme .number-card-number{font-size:clamp(27px,2.4vw,35px);line-height:1.3;letter-spacing:.005em}
+.nine-theme .number-card-kicker,.nine-theme .number-card-status,.nine-theme .number-card-career,.nine-theme .number-card-career b,.nine-theme .number-card-fit span,.nine-theme .number-card-fit small,.nine-theme .number-card-supplier{font-size:14px;line-height:1.5}
+.nine-theme .number-card-status{white-space:normal;text-align:right}
+.nine-theme .number-card-fit strong{font-size:25px}
+.nine-theme .number-card-price{font-size:23px;line-height:1.3}
+.nine-theme .number-card-supplier{white-space:normal;overflow:visible;text-overflow:clip}
+.nine-theme .number-card button{font-size:15px;min-height:44px;padding:10px 12px}
+.nine-theme .empty-results{font-size:16px}
+/* Tables, rule cards, data management: prevent tiny text in dense views. */
+.nine-theme .results-table th,.nine-theme .matrix-table th{font-size:14px;line-height:1.5;letter-spacing:.01em}
+.nine-theme .results-table td,.nine-theme .matrix-table td{font-size:16px;line-height:1.55}
+.nine-theme .subline,.nine-theme .status-label,.nine-theme .pagination,.nine-theme .table-legend,.nine-theme .pagination-buttons>span{font-size:14px;line-height:1.55}
+.nine-theme .rule-card h4{font-size:21px}
+.nine-theme .rule-card p,.nine-theme .rule-deltas span{font-size:15px;line-height:1.6}
+.nine-theme .rule-type,.nine-theme .rule-pair{font-size:16px}
+.nine-theme .source-row strong,.nine-theme .import-row strong,.nine-theme .source-row span,.nine-theme .import-row span,.nine-theme .source-row p,.nine-theme .import-row p{font-size:15px;line-height:1.6}
+.nine-theme .csv-guide p,.nine-theme .muted-note,.nine-theme .bottom-help,.nine-theme .notice-box p,.nine-theme .notice-box strong{font-size:16px!important;line-height:1.7}
+.nine-theme .csv-guide pre{font-size:14px;line-height:1.6;max-width:100%;overflow:auto}
+.nine-theme .site-footer,.nine-theme #offline-message{font-size:14px!important;line-height:1.6}
+/* Analysis form & explainable report. */
+.nine-theme .analyzer-input h3{font-size:27px}
+.nine-theme .analyzer-input p,.nine-theme .input-footnote,.nine-theme .analysis-placeholder p{font-size:16px;line-height:1.7}
+.nine-theme .analysis-placeholder h3{font-size:25px}
+.nine-theme .detail-note,.nine-theme .detail-disclaimer,.nine-theme .modal-subtitle,.nine-theme .check-row,.nine-theme .import-result{font-size:15px;line-height:1.67}
+.nine-theme .score-row,.nine-theme .trace-item p,.nine-theme .trace-item strong,.nine-theme .delta-chip,.nine-theme .detail-offer-row strong,.nine-theme .detail-offer-row small,.nine-theme .detail-offer-row a{font-size:15px;line-height:1.55}
+.nine-theme .detail-score small{font-size:14px}
+.nine-theme .ni-eyebrow,.nine-theme .ni-job-pill,.nine-theme .ni-score-line>span,.nine-theme .ni-report-headline p,.nine-theme .ni-summary-tags span,.nine-theme .ni-findings span,.nine-theme .ni-findings small{font-size:15px;line-height:1.6}
+.nine-theme .ni-report-intro p,.nine-theme .ni-card-heading p{font-size:16px;line-height:1.7}
+.nine-theme .ni-card-heading h3{font-size:23px;line-height:1.4}
+.nine-theme .ni-mini-attr span,.nine-theme .ni-mini-attr strong small,.nine-theme .ni-place,.nine-theme .ni-bar-label strong,.nine-theme .ni-bar-label b small,.nine-theme .ni-chart-note{font-size:15px;line-height:1.55}
+.nine-theme .ni-bar-label{gap:10px;flex-wrap:wrap}
+.nine-theme .ni-advice-grid p,.nine-theme .ni-trace-row p,.nine-theme .ni-trace-row small,.nine-theme .ni-offer small,.nine-theme .ni-offer a,.nine-theme .ni-empty-text,.nine-theme .ni-help-note{font-size:16px;line-height:1.7}
+.nine-theme .ni-action,.nine-theme .ni-art-toolbar button,.nine-theme .ni-hero-art button{font-size:15px;min-height:44px;line-height:1.4}
+.nine-theme .ni-art-toolbar span{font-size:14px}
+.nine-theme .ni-edit-dialog p,.nine-theme .ni-edit-dialog label,.nine-theme .ni-edit-dialog small,.nine-theme .ni-image-label input[type=file]{font-size:16px;line-height:1.62}
+.nine-theme .ni-edit-dialog input[type=file]{min-height:44px}
+.nine-theme .nm-motion-toggle{white-space:nowrap}
+.nine-theme .global-message,.nine-theme .toast{font-size:15px;line-height:1.6}
+/* Ensure no text blur or artificial scaling from previous animation versions. */
+.nine-theme .hero-main h2,.nine-theme .hero-main p,.nine-theme .hero-widget h3,.nine-theme .hero-widget p,.nine-theme .ni-report *{filter:none!important}
+/* Responsiveness—shift to single columns instead of shrinking text. */
+@media(max-width:1240px){
+ .nine-theme .sidebar{padding-left:17px;padding-right:17px}
+ .nine-theme .nav-item{font-size:14px;padding:11px 8px}
+ .nine-theme .nine-nav-logo{width:140px}
+ .nine-theme .brand{min-width:140px;margin-right:5px}
+}
+@media(max-width:1060px){
+ .nine-theme .sidebar{position:fixed;left:0;top:0;bottom:0;width:min(84vw,300px);height:100vh;padding:23px 18px;transform:translateX(-100%);transition:transform .25s ease;align-items:stretch;background:#350208;border-right:1px solid #c39249;z-index:90;overflow-y:auto}
+ .nine-theme .sidebar.open{transform:translateX(0)}
+ .nine-theme .brand{margin:0 0 20px;min-width:0;justify-content:center}.nine-theme .nine-nav-logo{width:190px}
+ .nine-theme .navigation{display:flex;flex-direction:column;align-items:stretch;gap:7px}.nine-theme .nav-item{width:100%;font-size:17px;min-height:48px;justify-content:flex-start}
+ .nine-theme .mobile-menu{display:inline-flex;align-items:center;justify-content:center;font-size:23px;min-width:44px;min-height:44px;background:#7a1117;border:1px solid #bb8337;border-radius:8px;color:#ffe4a1}
+}
+@media(max-width:850px){
+ .nine-theme .celestial-hero{grid-template-columns:1fr 1fr}
+ .nine-theme .hero-main{padding:35px 28px}
+ .nine-theme .hero-widget{padding:24px 20px}
+ .nine-theme .service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .nine-theme .service-card:last-child{grid-column:1/-1}
+ .nine-theme .result-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .nine-theme .digit-controls{grid-template-columns:1fr}
+ .nine-theme .digit-keypad{grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+ .nine-theme .ni-inventory-content{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+ :root{--nm-body:16px;--nm-secondary:15px;--nm-label:14px}
+ .nine-theme .celestial-announcement{padding:7px 11px;min-height:40px;gap:6px}
+ .nine-theme .celestial-announcement strong{font-size:17px}
+ .nine-theme .celestial-announcement .ann-small{font-size:14px}
+ .nine-theme .topbar{min-height:61px;gap:10px;padding:7px 13px}
+ .nine-theme .breadcrumb,.nine-theme .breadcrumb strong{font-size:14px}
+ .nine-theme .topbar .button{font-size:14px;padding:7px 10px;min-height:44px}
+ .nine-theme .nm-motion-toggle{font-size:0;min-height:44px;min-width:44px;padding:8px}
+ .nine-theme .nm-motion-toggle .nm-toggle-icon{font-size:20px}
+ .nine-theme .content{padding:20px 14px 42px}
+ .nine-theme .page-heading{flex-wrap:wrap;gap:12px}
+ .nine-theme .page-heading h1{font-size:clamp(30px,7vw,37px)}
+ .nine-theme .page-heading p{font-size:16px}
+ .nine-theme .nine-brand-shade strong{font-size:14px}
+ .nine-theme .celestial-hero{display:block;min-height:0}
+ .nine-theme .hero-main{padding:30px 23px}
+ .nine-theme .hero-main h2{font-size:clamp(34px,8vw,47px)}
+ .nine-theme .hero-main p,.nine-theme .hero-widget p{font-size:16px;line-height:1.72}
+ .nine-theme .hero-widget{padding:25px 22px}
+ .nine-theme .hero-widget h3{font-size:29px}
+ .nine-theme .celestial-categories{grid-template-columns:1fr}
+ .nine-theme .celestial-categories button{min-height:76px;padding:12px 18px;gap:14px}
+ .nine-theme .celestial-categories strong{font-size:17px}
+ .nine-theme .celestial-categories small{font-size:15px}
+ .nine-theme .service-grid,.nine-theme .result-cards{grid-template-columns:1fr}
+ .nine-theme .service-card,.nine-theme .service-card:last-child{grid-column:auto;min-height:0;padding:23px}
+ .nine-theme .service-card .service-text{font-size:16px}
+ .nine-theme .section-heading h2{font-size:29px}
+ .nine-theme .section-heading p{font-size:16px}
+ .nine-theme .nine-gallery-heading p{font-size:16px}
+ .nine-theme .nine-deity-card span{font-size:15px}
+ .nine-theme .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .nine-theme .stat-card{min-height:145px;padding:16px}
+ .nine-theme .stat-value{font-size:32px}
+ .nine-theme .panel{padding:22px 19px}
+ .nine-theme .overview-grid{grid-template-columns:1fr}
+ .nine-theme .digit-controls{grid-template-columns:1fr}
+ .nine-theme .digit-picker{padding:18px}
+ .nine-theme .digit-keypad{grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+ .nine-theme .digit-key{min-height:45px}
+ .nine-theme .search-panel>.filter-grid{grid-template-columns:1fr;padding:15px 18px 22px}
+ .nine-theme .digit-search,.nine-theme .filter-section-two{padding:20px 18px}
+ .nine-theme .filter-actions{padding:18px;flex-wrap:wrap}
+ .nine-theme .position-grid{gap:7px}.nine-theme .position-slot{flex:0 0 43px;width:43px}
+ .nine-theme .number-card{padding:20px}
+ .nine-theme .number-card-number{font-size:29px}
+ .nine-theme .ni-inventory-content{grid-template-columns:1fr;justify-items:center}
+ .nine-theme .ni-stock-summary,.nine-theme .ni-source-chart{width:100%}
+ .nine-theme .ni-report-card{padding:20px}
+ .nine-theme .ni-report-intro h2{font-size:30px}
+ .nine-theme .ni-bar-label strong{font-size:15px}
+ .nine-theme .ni-trace-row{gap:12px}
+ .nine-theme .table-wrap{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+ .nine-theme .matrix-table{min-width:690px}
+ .nine-theme .modal,.nine-theme .ni-edit-dialog{padding:20px}
+}
+@media(max-width:390px){
+ .nine-theme .content{padding-left:12px;padding-right:12px}
+ .nine-theme .breadcrumb>span:first-child{display:none}
+ .nine-theme .hero-main{padding:26px 18px}
+ .nine-theme .hero-widget{padding:22px 16px}
+ .nine-theme .hero-main h2{font-size:34px}
+ .nine-theme .ni-findings>div{padding:16px}
+ .nine-theme .ni-stock-summary p{font-size:15px}
+}
+@media(prefers-reduced-motion:reduce){.nine-theme *{scroll-behavior:auto!important}}
+/* Final small-screen typography QA: never compress the brand name or form fields. */
+@media(max-width:760px){
+ .nine-theme .celestial-announcement{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;row-gap:1px;min-height:58px}
+ .nine-theme .celestial-announcement strong{flex:0 0 100%;white-space:nowrap;text-align:center;line-height:1.3}
+ .nine-theme .celestial-announcement .ann-small{flex:0 0 100%;width:100%;text-align:center;line-height:1.4}
+ .nine-theme .celestial-announcement .ann-stars{display:none}
+ .nine-theme .sidebar{overflow-x:hidden}
+ .nine-theme .sidebar .sidebar-bottom,.nine-theme .sidebar .sidebar-notice{min-width:0;overflow-wrap:anywhere}
+}
+@media(max-width:480px){
+ #view-analyze:has(#analysis-output:not([hidden])) #analyzer-form{grid-template-columns:1fr!important;gap:12px!important}
+ #view-analyze:has(#analysis-output:not([hidden])) #analyzer-form>.button{grid-column:1/-1}
+ .nine-theme .analyzer-input .field{width:100%;min-width:0}
+ .nine-theme .analyzer-input .control{width:100%;min-width:0}
+}
+/* Override highly-specific old mobile header rules (originally forced 11px). */
+.nine-theme .view:not(#view-overview)>.page-heading p{font-size:17px!important;line-height:1.65}
+.nine-theme .view:not(#view-overview)>.page-heading h1{font-size:clamp(30px,3vw,42px);line-height:1.3}
+.nine-theme .ni-radar text{font-size:15px;font-weight:600}
+@media(max-width:760px){
+ .nine-theme .view:not(#view-overview)>.page-heading p{font-size:16px!important}
+ .nine-theme .view:not(#view-overview)>.page-heading h1{font-size:clamp(29px,7vw,36px)!important}
+}

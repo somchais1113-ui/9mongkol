@@ -1,0 +1,12 @@
+HOME 1440 {"viewport": 1440, "docWidth": 1440, "hero": "17px", "service": "17px", "category": "14px", "nav": "15px", "button": "17px", "loaded": "420", "css": 7, "heroFilter": "none"} errors []
+NAV 1440 {'client': 1440, 'scroll': 1440}
+REPORT 1440 {'active': 'view-analyze', 'output': True, 'radar': True, 'reportP': '16px', 'adviceP': '16px', 'traceP': '16px', 'docWidth': 1440} errors []
+HOME 1024 {"viewport": 1024, "docWidth": 1024, "hero": "17px", "service": "17px", "category": "14px", "nav": "17px", "button": "17px", "loaded": "420", "css": 7, "heroFilter": "none"} errors []
+REPORT 1024 {'active': 'view-analyze', 'output': True, 'radar': True, 'reportP': '16px', 'adviceP': '16px', 'traceP': '16px', 'docWidth': 1024} errors []
+HOME 390 {"viewport": 390, "docWidth": 390, "hero": "16px", "service": "16px", "category": "15px", "nav": "17px", "button": "17px", "loaded": "420", "css": 7, "heroFilter": "none"} errors []
+SMALL_TEXT_HOME []
+SIDEBAR_OVER []
+REPORT 390 {'active': 'view-analyze', 'output': True, 'radar': True, 'reportP': '16px', 'adviceP': '16px', 'traceP': '16px', 'docWidth': 390} errors []
+SMALL_TEXT_REPORT []
+HOME 320 {"viewport": 320, "docWidth": 320, "hero": "16px", "service": "16px", "category": "15px", "nav": "17px", "button": "17px", "loaded": "420", "css": 7, "heroFilter": "none"} errors []
+REPORT 320 {'active': 'view-analyze', 'output': True, 'radar': True, 'reportP': '16px', 'adviceP': '16px', 'traceP': '16px', 'docWidth': 320} errors []
